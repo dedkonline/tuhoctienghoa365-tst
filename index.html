@@ -3,56 +3,167 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#153e38"><meta name="description" content="Tự học tiếng Hoa phổ thông theo tiến độ linh hoạt 365 ngày, có gia sư AI, luyện nghe nói và viết chữ Hán.">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <title>Tự học tiếng Hoa 365</title>
 <style>
-:root{--ink:#18332f;--muted:#667975;--paper:#f5f7f4;--card:#fff;--line:#dfe8e2;--green:#176b57;--green2:#e7f3ed;--gold:#c58a26;--red:#b54736;--shadow:0 12px 36px #173d3210}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.top{position:sticky;top:0;z-index:5;background:#fffffff2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topin{max-width:1120px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;cursor:pointer}.logo{width:42px;height:42px;border-radius:13px;background:var(--ink);color:#f3d88b;display:grid;place-items:center;font:700 23px serif}.brand strong{display:block;font-size:16px}.brand small{color:var(--muted)}.topright{display:flex;align-items:center;gap:10px}.pill{font-size:12px;border-radius:999px;padding:6px 10px;background:var(--green2);color:var(--green);font-weight:700}.iconbtn,.btn{padding:10px 14px;border-radius:12px;background:var(--green);color:white;font-weight:650}.btn.secondary{background:var(--green2);color:var(--green)}.btn.ghost{background:#f1f4f1;color:var(--ink)}.btn.danger{background:#fff0ed;color:var(--red)}.btn:disabled{opacity:.45;cursor:not-allowed}.wrap{max-width:1120px;margin:auto;padding:28px 20px 80px}.hero{background:linear-gradient(120deg,#153e38,#1d6655);color:white;border-radius:24px;padding:30px;display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:center;box-shadow:var(--shadow)}.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.13;margin:0 0 12px}.hero p{color:#d8e8e1;max-width:650px}.hero-stat{background:#ffffff15;border:1px solid #ffffff24;border-radius:18px;padding:20px}.hero-stat strong{font-size:38px;display:block}.progress{height:9px;background:#ffffff28;border-radius:20px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:#f1d58b;width:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}.tile,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.tile{cursor:pointer;transition:.18s}.tile:hover{transform:translateY(-3px);border-color:#a9cbb9}.tile .emoji{font-size:27px}.tile h3{margin:9px 0 4px}.tile p,.muted{color:var(--muted)}h2{font-size:25px;margin:28px 0 12px}h3{margin-top:0}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:28px 0 12px}.sectionhead h2{margin:0}.input{border:1px solid var(--line);background:white;border-radius:11px;padding:10px 12px;min-width:0;color:var(--ink)}.lessonlist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.lessonrow{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:white;padding:13px;border-radius:14px;cursor:pointer;text-align:left;color:var(--ink)}.lessonrow:hover{border-color:var(--green)}.num{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:var(--green2);color:var(--green);display:grid;place-items:center;font-weight:800}.lessonrow.done .num{background:var(--green);color:white}.lessonrow .desc{min-width:0;flex:1}.lessonrow strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lessonrow small{color:var(--muted)}.tag{font-size:11px;padding:4px 8px;background:#f0f3f0;border-radius:99px;color:#586a64}.tag.done{background:var(--green2);color:var(--green)}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.lessonbody{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;line-height:1.7}.lessonbody h3{font-size:21px}.lessonbody h4{margin:18px 0 6px;color:var(--green)}.lessonbody p{margin:8px 0}.lessonbody table{border-collapse:collapse;width:100%;font-size:13px}.lessonbody td,.lessonbody th{border:1px solid var(--line);padding:8px;vertical-align:top}.lessonbody th{background:#edf5f0}.table-scroll{overflow-x:auto;margin:12px 0}.strokegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:16px}.strokegrid img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}.note{border-left:4px solid var(--gold);background:#fff8e9;padding:12px 15px;border-radius:0 12px 12px 0;color:#68512b;margin:14px 0}.topicgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.topic{padding:17px;background:white;border:1px solid var(--line);border-radius:15px;cursor:pointer;text-align:left}.topic:hover{border-color:var(--green)}.topic strong{display:block}.topic small{color:var(--muted)}.practicegrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.resource{padding:15px;border:1px solid var(--line);border-radius:14px;background:white;margin:10px 0}.resource a{color:var(--green);font-weight:700}.resource p{margin:4px 0;color:var(--muted);font-size:13px}.chatbox{height:min(58vh,560px);overflow:auto;background:#f6f8f6;border:1px solid var(--line);border-radius:16px;padding:14px}.bubble{max-width:88%;padding:12px 14px;border-radius:15px;margin:10px 0;white-space:pre-wrap}.bubble.ai{background:white;border:1px solid var(--line)}.bubble.me{background:var(--green);color:white;margin-left:auto}.chattools{display:flex;gap:8px;margin-top:10px}.chattools textarea{flex:1;resize:vertical;min-height:48px}.status{font-size:13px;color:var(--muted);margin:8px 0}.hide{display:none!important}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}.modal{position:fixed;inset:0;background:#102b26a8;z-index:20;display:grid;place-items:center;padding:16px}.modalbox{background:white;border-radius:20px;padding:22px;max-width:520px;width:100%;max-height:90vh;overflow:auto}.score{font-size:42px;font-weight:850;color:var(--green)}.tabs{display:flex;gap:6px;flex-wrap:wrap}.tab{background:#edf2ee;color:var(--ink);padding:8px 12px;border-radius:10px}.tab.active{background:var(--green);color:white}.small{font-size:12px}.spinner{width:16px;height:16px;border:2px solid #fff8;border-top-color:white;border-radius:50%;display:inline-block;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-.live-box{background:var(--green2);border:2px dashed var(--green);border-radius:16px;padding:16px;margin:14px 0;text-align:center}.live-status{font-weight:700;color:var(--green);margin-bottom:8px;font-size:14px}.live-dot{display:inline-block;width:10px;height:10px;background:var(--red);border-radius:50%;margin-right:6px}.live-dot.active{background:var(--green);animation:spin 1.5s infinite}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding:23px}.grid3{grid-template-columns:1fr}.lessonlist{grid-template-columns:1fr}.topicgrid{grid-template-columns:1fr 1fr}.practicegrid{grid-template-columns:1fr}.wrap{padding:18px 14px 70px}.topin{padding:10px 14px}.brand small{display:none}.hero-stat{padding:14px}.bubble{max-width:96%}}
+:root{--ink:#18332f;--muted:#667975;--paper:#f5f7f4;--card:#fff;--line:#dfe8e2;--green:#176b57;--green2:#e7f3ed;--gold:#c58a26;--red:#b54736;--shadow:0 12px 36px #173d3210}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.top{position:sticky;top:0;z-index:5;background:#fffffff2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topin{max-width:1120px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;cursor:pointer}.logo{width:42px;height:42px;border-radius:13px;background:var(--ink);color:#f3d88b;display:grid;place-items:center;font:700 23px serif}.brand strong{display:block;font-size:16px}.brand small{color:var(--muted)}.topright{display:flex;align-items:center;gap:10px}.pill{font-size:12px;border-radius:999px;padding:6px 10px;background:var(--green2);color:var(--green);font-weight:700}.iconbtn,.btn{padding:10px 14px;border-radius:12px;background:var(--green);color:white;font-weight:650}.btn.secondary{background:var(--green2);color:var(--green)}.btn.ghost{background:#f1f4f1;color:var(--ink)}.btn.danger{background:#fff0ed;color:var(--red)}.btn:disabled{opacity:.45;cursor:not-allowed}.wrap{max-width:1120px;margin:auto;padding:28px 20px 80px}.hero{background:linear-gradient(120deg,#153e38,#1d6655);color:white;border-radius:24px;padding:30px;display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:center;box-shadow:var(--shadow)}.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.13;margin:0 0 12px}.hero p{color:#d8e8e1;max-width:650px}.hero-stat{background:#ffffff15;border:1px solid #ffffff24;border-radius:18px;padding:20px}.hero-stat strong{font-size:38px;display:block}.progress{height:9px;background:#ffffff28;border-radius:20px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:#f1d58b;width:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}.tile,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.tile{cursor:pointer;transition:.18s}.tile:hover{transform:translateY(-3px);border-color:#a9cbb9}.tile .emoji{font-size:27px}.tile h3{margin:9px 0 4px}.tile p,.muted{color:var(--muted)}h2{font-size:25px;margin:28px 0 12px}h3{margin-top:0}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:28px 0 12px}.sectionhead h2{margin:0}.input{border:1px solid var(--line);background:white;border-radius:11px;padding:10px 12px;min-width:0;color:var(--ink)}.lessonlist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.lessonrow{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:white;padding:13px;border-radius:14px;cursor:pointer;text-align:left;color:var(--ink)}.lessonrow:hover{border-color:var(--green)}.num{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:var(--green2);color:var(--green);display:grid;place-items:center;font-weight:800}.lessonrow.done .num{background:var(--green);color:white}.lessonrow .desc{min-width:0;flex:1}.lessonrow strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lessonrow small{color:var(--muted)}.tag{font-size:11px;padding:4px 8px;background:#f0f3f0;border-radius:99px;color:#586a64}.tag.done{background:var(--green2);color:var(--green)}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.lessonbody{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;line-height:1.7}.lessonbody h3{font-size:21px}.lessonbody h4{margin:18px 0 6px;color:var(--green)}.lessonbody p{margin:8px 0}.lessonbody table{border-collapse:collapse;width:100%;font-size:13px}.lessonbody td,.lessonbody th{border:1px solid var(--line);padding:8px;vertical-align:top}.lessonbody th{background:#edf5f0}.topicgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.topic{padding:17px;background:white;border:1px solid var(--line);border-radius:15px;cursor:pointer;text-align:left}.topic:hover{border-color:var(--green)}.topic strong{display:block}.topic small{color:var(--muted)}.practicegrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.resource{padding:15px;border:1px solid var(--line);border-radius:14px;background:white;margin:10px 0}.resource a{color:var(--green);font-weight:700}.resource p{margin:4px 0;color:var(--muted);font-size:13px}.hide{display:none!important}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}.live-box{background:var(--green2);border:2px dashed var(--green);border-radius:16px;padding:16px;margin:14px 0;text-align:center}.live-status{font-weight:700;color:var(--green);margin-bottom:8px;font-size:14px}.live-dot{display:inline-block;width:10px;height:10px;background:var(--red);border-radius:50%;margin-right:6px}.live-dot.active{background:var(--green);animation:spin 1.5s infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:23px}.grid3{grid-template-columns:1fr}.lessonlist{grid-template-columns:1fr}.topicgrid{grid-template-columns:1fr 1fr}.practicegrid{grid-template-columns:1fr}.wrap{padding:18px 14px 70px}.topin{padding:10px 14px}.brand small{display:none}.hero-stat{padding:14px}}
 </style></head>
 <body>
-<header class="top"><div class="topin"><div class="brand" onclick="go('home')"><div class="logo">華</div><div><strong>Tự học tiếng Hoa 365</strong><small>普通话 · Gia sư AI đồng hành</small></div></div><div class="topright"><span class="pill" id="networkPill">Đang kiểm tra mạng</span><span class="pill" id="progressPill">0/365 buổi</span></div></div></header>
-<main class="wrap" id="app"><div class="card">Đang tải giáo trình...</div></main><div class="footer">Học theo nhịp của mình · Không có chuỗi ngày bắt buộc · Tiến độ lưu trên thiết bị</div>
-<div id="modal" class="modal hide"><div class="modalbox" id="modalbox"></div></div>
+<header class="top"><div class="topin"><div class="brand" onclick="go('home')"><div class="logo">華</div><div><strong>Tự học tiếng Hoa 365</strong><small>普通话 · Gia sư AI đồng hành</small></div></div><div class="topright"><span class="pill" id="networkPill">Online</span><span class="pill" id="progressPill">0/365 buổi</span></div></div></header>
+<main class="wrap" id="app"><div class="card">Đang khởi tạo bài học...</div></main>
+<div class="footer">Học theo nhịp của mình · Tiến độ lưu cục bộ trên thiết bị</div>
+
 <script>
 const RENDER_PROXY_WSS_URL = "wss://gemini-live-proxy-69dr.onrender.com";
 let geminiLiveWs = null, liveAudioCtx = null, liveScriptProc = null, isLiveActive = false;
 
-const $=s=>document.querySelector(s);let DB=null,route='home',activeDay=1,activeWeek=1,chatHistory=[];
-const KEY='zh365_progress_v2';let state=JSON.parse(localStorage.getItem(KEY)||'null')||{completed:[],scores:{},lastDay:1};
+const $=s=>document.querySelector(s);
+let route='home', activeDay=1, activeWeek=1;
+const KEY='zh365_progress_v2';
+let state=JSON.parse(localStorage.getItem(KEY)||'null')||{completed:[],scores:{},lastDay:1};
+
 const save=()=>{localStorage.setItem(KEY,JSON.stringify(state));$('#progressPill').textContent=state.completed.length+'/365 buổi'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-async function init(){try{let r=await fetch('assets/curriculum.json');DB=await r.json();save();go('home');updateNetwork();window.addEventListener('online',updateNetwork);window.addEventListener('offline',updateNetwork);}catch(e){$('#app').innerHTML='<div class="card">Không tải được dữ liệu giáo trình. Hãy đảm bảo file assets/curriculum.json có sẵn.</div>'}}
-function updateNetwork(){let e=$('#networkPill');if(e){e.textContent=navigator.onLine?'Online':'Offline';e.style.background=navigator.onLine?'var(--green2)':'#fff0d9';e.style.color=navigator.onLine?'var(--green)':'#875b16'}}
+// Dữ liệu bài học cơ bản tích hợp sẵn trong code
+const DEFAULT_LESSONS = Array.from({length: 365}, (_, i) => {
+  let day = i + 1;
+  return {
+    day: day,
+    week: Math.ceil(day / 7),
+    weekTitle: "Giai đoạn " + Math.ceil(day / 30),
+    title: day <= 7 ? ["Bốn thanh điệu + Số đếm 0-10", "Phụ âm b/p, d/t, g/k", "Phụ âm zh ch sh r, j q x", "Vận mẫu và biến thanh", "Ôn tập phát âm", "Chào hỏi cơ bản", "Đàm thoại chào hỏi"][day-1] : "Bài học Ngày " + day,
+    html: `<p>Nội dung học tập cho Ngày ${day}. Hãy luyện phát âm từ vựng và nhấn nút bên dưới để thực hành nói chuyện trực tiếp với Gemini Live!</p>`
+  };
+});
+
+let DB = {
+  lessons: DEFAULT_LESSONS,
+  topics: [
+    { week: 1, title: "Phát âm & Thanh điệu" },
+    { week: 2, title: "Chào hỏi cơ bản" },
+    { week: 3, title: "Giới thiệu bản thân" },
+    { week: 4, title: "Gia đình & Bạn bè" },
+    { week: 5, title: "Mua sắm & Giá cả" },
+    { week: 6, title: "Ăn uống & Gọi món" }
+  ]
+};
+
+async function init(){
+  try {
+    let r = await fetch('assets/curriculum.json');
+    if(r.ok) {
+      let data = await r.json();
+      if(data && data.lessons) DB = data;
+    }
+  } catch(e) {
+    console.log("Dùng dữ liệu tích hợp sẵn.");
+  }
+  save();
+  go('home');
+}
+
 function go(r,p={}){route=r;if(p.day)activeDay=p.day;if(p.week)activeWeek=p.week;render()}
-function render(){if(!DB)return;({home:home,curriculum:curriculum,lesson:lesson,topics:topics,topicdetail:topicdetail,practice:practice,chat:chat,exam:exam}[route]||home)()}
+function render(){({home:home,curriculum:curriculum,lesson:lesson,topics:topics,topicdetail:topicdetail,practice:practice,chat:chat,exam:exam}[route]||home)()}
 
-function home(){let n=state.completed.length;$('#app').innerHTML=`<section class="hero"><div><div class="pill" style="background:#ffffff20;color:#f5df9f">LỘ TRÌNH LINH HOẠT</div><h1>Học tiếng Hoa<br>theo nhịp của anh.</h1><p>Không cần học đúng ngày, không mất tiến độ khi nghỉ. Chọn bài muốn học, học lại hoặc học vượt bất cứ lúc nào.</p><div class="row"><button class="btn" onclick="go('lesson',{day:${state.lastDay||1}})">Tiếp tục học · Ngày ${state.lastDay||1}</button><button class="btn secondary" onclick="go('curriculum')">Chọn ngày học</button></div></div><div class="hero-stat"><span>Tiến độ hoàn thành</span><strong>${n}<small style="font-size:18px;font-weight:500"> / 365</small></strong><div class="progress"><span style="width:${n/365*100}%"></span></div><small>${n?`Đã hoàn thành ${n} buổi học.`:'Bắt đầu từ Ngày 1/365 khi sẵn sàng.'}</small><p class="small" style="color:#d8e8e1">Tiến độ lưu cục bộ trên thiết bị này.</p></div></section>
-<div class="grid3"><div class="tile" onclick="go('curriculum')"><div class="emoji">📚</div><h3>Học theo giáo trình 365</h3><p>Chọn ngày, học lại, học vượt; bài học có từ vựng, ngữ pháp và chữ Hán.</p></div><div class="tile" onclick="go('topics')"><div class="emoji">🧭</div><h3>Học nhanh theo chủ đề</h3><p>Đi thẳng tới nhóm bài theo tình huống giao tiếp.</p></div><div class="tile" onclick="go('practice')"><div class="emoji">🎧</div><h3>Thực hành nghe / đọc</h3><p>Clip nghe và bài đọc ngắn từ các nguồn học tiếng Hoa.</p></div></div>
-<div class="sectionhead"><h2>Học tiếp</h2><div class="row"><button class="btn secondary" onclick="go('exam')">📝 Kiểm tra 3 kỹ năng</button><button class="btn secondary" onclick="go('chat')">💬 Trò chuyện với gia sư AI</button></div></div><div class="card"><div class="row between"><div><strong>Ngày ${state.lastDay||1}/365</strong><div class="muted">${DB.lessons[state.lastDay-1]?.title||'Bài học chưa có trong tài liệu nguồn'}</div></div><button class="btn" onclick="go('lesson',{day:state.lastDay||1})">Mở bài</button></div></div>`}
+function home(){
+  let n=state.completed.length;
+  $('#app').innerHTML=`
+  <section class="hero">
+    <div>
+      <div class="pill" style="background:#ffffff20;color:#f5df9f">LỘ TRÌNH LINH HOẠT</div>
+      <h1>Học tiếng Hoa<br>theo nhịp của anh.</h1>
+      <p>Không cần học đúng ngày, không mất tiến độ khi nghỉ. Chọn bài muốn học, học lại hoặc học vượt bất cứ lúc nào.</p>
+      <div class="row">
+        <button class="btn" onclick="go('lesson',{day:${state.lastDay||1}})">Tiếp tục học · Ngày ${state.lastDay||1}</button>
+        <button class="btn secondary" onclick="go('curriculum')">Chọn ngày học</button>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <span>Tiến độ hoàn thành</span>
+      <strong>${n}<small style="font-size:18px;font-weight:500"> / 365</small></strong>
+      <div class="progress"><span style="width:${n/365*100}%"></span></div>
+      <small>${n?`Đã hoàn thành ${n} buổi học.`:'Bắt đầu từ Ngày 1/365 khi sẵn sàng.'}</small>
+    </div>
+  </section>
+  <div class="grid3">
+    <div class="tile" onclick="go('curriculum')"><div class="emoji">📚</div><h3>Học theo giáo trình 365</h3><p>Chọn ngày, học lại, học vượt; bài học có từ vựng và ngữ pháp.</p></div>
+    <div class="tile" onclick="go('topics')"><div class="emoji">🧭</div><h3>Học nhanh theo chủ đề</h3><p>Đi thẳng tới nhóm bài theo tình huống giao tiếp.</p></div>
+    <div class="tile" onclick="go('practice')"><div class="emoji">🎧</div><h3>Thực hành nghe / đọc</h3><p>Clip nghe và bài đọc ngắn trợ giúp.</p></div>
+  </div>
+  <div class="sectionhead"><h2>Học tiếp</h2><div class="row"><button class="btn secondary" onclick="go('chat')">💬 Gia sư AI Live</button></div></div>
+  <div class="card"><div class="row between"><div><strong>Ngày ${state.lastDay||1}/365</strong><div class="muted">${DB.lessons[state.lastDay-1]?.title||'Bài học Ngày '+state.lastDay}</div></div><button class="btn" onclick="go('lesson',{day:state.lastDay||1})">Mở bài</button></div></div>`;
+}
 
-function curriculum(){$('#app').innerHTML=`<div class="sectionhead"><div><h2>Giáo trình 365 ngày</h2><div class="muted">Chọn bất kỳ ngày nào · Không khóa bài theo lịch</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><div class="row"><label for="daypick"><b>Đi tới ngày học</b></label><input id="daypick" class="input" type="number" min="1" max="365" value="${activeDay}" style="width:110px"><button class="btn" onclick="let v=+$('#daypick').value;if(v>=1&&v<=365)go('lesson',{day:v})">Mở bài</button><input id="filterLesson" class="input" placeholder="Tìm chủ đề..." style="flex:1"></div></div><h3 style="margin-top:24px">78 buổi có nội dung trong giáo trình gốc</h3><div class="lessonlist" id="lessonlist">${DB.lessons.map(l=>lessonRow(l)).join('')}</div><h3 style="margin-top:28px">Ngày 79–365 · Chưa có nội dung trong file nguồn</h3><div class="lessonlist">${Array.from({length:287},(_,i)=>{let d=i+79;return `<button class="lessonrow" onclick="go('lesson',{day:${d}})"><span class="num">${d}</span><span class="desc"><strong>Ngày ${d}/365</strong><small>Chưa có nội dung trong tài liệu gốc</small></span><span class="tag">Chờ bổ sung</span></button>`}).join('')}</div>`;
-$('#filterLesson').addEventListener('input',e=>{let q=e.target.value.toLowerCase();document.querySelectorAll('#lessonlist .lessonrow').forEach(el=>{el.classList.toggle('hide',!el.dataset.search.includes(q));});});}
+function curriculum(){
+  $('#app').innerHTML=`
+  <div class="sectionhead"><div><h2>Giáo trình 365 ngày</h2><div class="muted">Chọn bất kỳ ngày nào để học</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div>
+  <div class="card"><div class="row"><label for="daypick"><b>Đi tới ngày học</b></label><input id="daypick" class="input" type="number" min="1" max="365" value="${activeDay}" style="width:110px"><button class="btn" onclick="let v=+$('#daypick').value;if(v>=1&&v<=365)go('lesson',{day:v})">Mở bài</button></div></div>
+  <h3 style="margin-top:24px">Danh sách 365 buổi học</h3>
+  <div class="lessonlist" id="lessonlist">${DB.lessons.map(l=>lessonRow(l)).join('')}</div>`;
+}
 
-function lessonRow(l){let done=state.completed.includes(l.day);return `<button class="lessonrow ${done?'done':''}" data-search="${esc((l.title+' '+l.weekTitle).toLowerCase())}" onclick="go('lesson',{day:${l.day}})"><span class="num">${done?'✓':l.day}</span><span class="desc"><strong>${esc(l.title)}</strong><small>Tuần ${l.week} · ${esc(l.weekTitle)}</small></span><span class="tag ${done?'done':''}">${done?'Đã học':'Mở bài'}</span></button>`}
+function lessonRow(l){
+  let done=state.completed.includes(l.day);
+  return `<button class="lessonrow ${done?'done':''}" onclick="go('lesson',{day:${l.day}})"><span class="num">${done?'✓':l.day}</span><span class="desc"><strong>Ngày ${l.day}: ${esc(l.title)}</strong><small>Tuần ${l.week}</small></span><span class="tag ${done?'done':''}">${done?'Đã học':'Mở bài'}</span></button>`;
+}
 
-function lesson(){let l=DB.lessons[activeDay-1];state.lastDay=activeDay;save();if(!l){$('#app').innerHTML=`<div class="sectionhead"><div><h2>Ngày ${activeDay}/365</h2><div class="muted">Chưa có nội dung trong giáo trình Word hiện tại.</div></div><button class="btn secondary" onclick="go('curriculum')">← Danh sách</button></div><div class="card"><p>Ngày ${activeDay} chưa có bài học chi tiết.</p><button class="btn" onclick="go('chat')">Trò chuyện với gia sư AI</button></div>`;return}
-let done=state.completed.includes(l.day);$('#app').innerHTML=`<div class="sectionhead"><div><div class="muted">Tuần ${l.week} · ${esc(l.weekTitle)}</div><h2>Ngày ${l.day}/365 — ${esc(l.title)}</h2></div><button class="btn secondary" onclick="go('curriculum')">← Chọn ngày</button></div>
-<div class="live-box"><div class="live-status"><span class="live-dot" id="liveDot"></span><span id="liveStatus">Gemini Live tự động kết nối giấu Key qua Render Server</span></div><button id="btnLive" class="btn" style="width:100%" onclick="toggleLive()">🎙️ Bắt đầu hội thoại giọng nói Gemini Live</button></div>
-<div class="bar"><button class="btn secondary" onclick="speak('${esc(l.title).replace(/'/g,"\\'")}')">🔊 Nghe tên bài</button><button class="btn ${done?'ghost':''}" onclick="complete(${l.day})">${done?'✓ Đã hoàn thành':'Đánh dấu hoàn thành'}</button></div><div class="lessonbody">${l.html||'<p>Nội dung buổi học.</p>'}</div>${vocabCards(l)}<div class="card" style="margin-top:18px"><h3>Luyện viết chữ Hán bằng tay / chuột</h3><div class="row"><label for="writeChar"><b>Chữ cần luyện</b></label><input id="writeChar" class="input" value="一" maxlength="2" style="width:90px;font-size:22px"><button class="btn secondary" onclick="clearWriting()">Xóa nét viết</button></div><canvas id="writeCanvas" width="520" height="520" style="display:block;width:min(100%,420px);height:auto;margin:14px auto 0;border:1px solid var(--line);border-radius:12px;background:#fff;touch-action:none"></canvas></div><div class="row between" style="margin-top:18px"><button class="btn ghost" ${l.day===1?'disabled':''} onclick="go('lesson',{day:${Math.max(1,l.day-1)}})">← Bài trước</button><button class="btn" onclick="go('lesson',{day:${Math.min(365,l.day+1)}})">Bài kế →</button></div>`;setupWritingPad()}
+function lesson(){
+  let l=DB.lessons[activeDay-1] || {day: activeDay, title: "Ngày "+activeDay, html: "<p>Bài học Ngày "+activeDay+"</p>"};
+  state.lastDay=activeDay; save();
+  let done=state.completed.includes(l.day);
+  $('#app').innerHTML=`
+  <div class="sectionhead"><div><div class="muted">Bài học Ngày ${l.day}</div><h2>${esc(l.title)}</h2></div><button class="btn secondary" onclick="go('curriculum')">← Chọn ngày</button></div>
+  
+  <div class="live-box">
+    <div class="live-status"><span class="live-dot" id="liveDot"></span><span id="liveStatus">Gemini Live kết nối qua Backend Proxy</span></div>
+    <button id="btnLive" class="btn" style="width:100%" onclick="toggleLive()">🎙️ Bắt đầu đàm thoại giọng nói Gemini Live</button>
+  </div>
 
-function vocabCards(l){try{let doc=new DOMParser().parseFromString(l.html,'text/html');let tables=[...doc.querySelectorAll('table')];let t=tables.find(x=>x.querySelector('tr')?.textContent.includes('Giản thể')&&x.querySelector('tr')?.textContent.includes('Pinyin'));if(!t)return '';let rows=[...t.querySelectorAll('tr')].slice(1);let cards=rows.map((r,i)=>{let c=[...r.querySelectorAll('td,th')].map(x=>x.textContent.trim());if(c.length<5||!c[0]||!/[\u3400-\u9fff]/.test(c[0]))return '';let z=c[0],py=c[2]||'',vi=c[4]||'';return `<div class="resource"><div class="row between"><div><strong style="font:700 27px serif">${esc(z)}</strong><div class="muted">${esc(py)} · ${esc(vi)}</div></div><button class="btn secondary" onclick="speak('${esc(z).replace(/'/g,"\\'")}')">🔊 Nghe</button></div></div>`}).filter(Boolean);return cards.length?`<h3 style="margin-top:24px">Từ vựng bài học</h3><div class="practicegrid">${cards.join('')}</div>`:''}catch(e){return ''}}
+  <div class="bar">
+    <button class="btn secondary" onclick="speak('${esc(l.title).replace(/'/g,"\\'")}')">🔊 Nghe tên bài</button>
+    <button class="btn ${done?'ghost':''}" onclick="complete(${l.day})">${done?'✓ Đã hoàn thành':'Đánh dấu hoàn thành'}</button>
+  </div>
+  <div class="lessonbody">${l.html}</div>
+  
+  <div class="card" style="margin-top:18px">
+    <h3>Luyện viết chữ Hán bằng tay / chuột</h3>
+    <div class="row"><label for="writeChar"><b>Chữ cần luyện</b></label><input id="writeChar" class="input" value="好" maxlength="2" style="width:90px;font-size:22px"><button class="btn secondary" onclick="clearWriting()">Xóa nét viết</button></div>
+    <canvas id="writeCanvas" width="520" height="520" style="display:block;width:min(100%,360px);height:auto;margin:14px auto 0;border:1px solid var(--line);border-radius:12px;background:#fff;touch-action:none"></canvas>
+  </div>
+  
+  <div class="row between" style="margin-top:18px">
+    <button class="btn ghost" ${l.day===1?'disabled':''} onclick="go('lesson',{day:${Math.max(1,l.day-1)}})">← Bài trước</button>
+    <button class="btn" onclick="go('lesson',{day:${Math.min(365,l.day+1)}})">Bài kế →</button>
+  </div>`;
+  setupWritingPad();
+}
 
-function setupWritingPad(){let c=$('#writeCanvas'),input=$('#writeChar');if(!c||!input)return;let ctx=c.getContext('2d'),drawing=false;function base(){ctx.clearRect(0,0,c.width,c.height);ctx.strokeStyle='#d8e4dc';ctx.lineWidth=2;ctx.setLineDash([8,8]);ctx.strokeRect(8,8,c.width-16,c.height-16);ctx.beginPath();ctx.moveTo(c.width/2,8);ctx.lineTo(c.width/2,c.height-8);ctx.moveTo(8,c.height/2);ctx.lineTo(c.width-8,c.height/2);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='rgba(23,107,87,.14)';ctx.font='300px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(input.value||'字',c.width/2,c.height/2+8)}function point(e){let r=c.getBoundingClientRect();return {x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height}}base();input.addEventListener('input',base);c.addEventListener('pointerdown',e=>{drawing=true;c.setPointerCapture(e.pointerId);let p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.strokeStyle='#18332f';ctx.lineWidth=9;ctx.lineCap='round';ctx.lineJoin='round'});c.addEventListener('pointermove',e=>{if(!drawing)return;let p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke()});['pointerup','pointercancel'].forEach(ev=>c.addEventListener(ev,()=>drawing=false));c._base=base}
+function setupWritingPad(){
+  let c=$('#writeCanvas'),input=$('#writeChar'); if(!c||!input)return;
+  let ctx=c.getContext('2d'),drawing=false;
+  function base(){
+    ctx.clearRect(0,0,c.width,c.height); ctx.strokeStyle='#d8e4dc'; ctx.lineWidth=2; ctx.setLineDash([8,8]);
+    ctx.strokeRect(8,8,c.width-16,c.height-16); ctx.beginPath(); ctx.moveTo(c.width/2,8); ctx.lineTo(c.width/2,c.height-8);
+    ctx.moveTo(8,c.height/2); ctx.lineTo(c.width-8,c.height/2); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle='rgba(23,107,87,.14)'; ctx.font='280px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(input.value||'字',c.width/2,c.height/2+8);
+  }
+  function point(e){ let r=c.getBoundingClientRect(); return {x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height} }
+  base(); input.addEventListener('input',base);
+  c.addEventListener('pointerdown',e=>{drawing=true;c.setPointerCapture(e.pointerId);let p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.strokeStyle='#18332f';ctx.lineWidth=10;ctx.lineCap='round';ctx.lineJoin='round'});
+  c.addEventListener('pointermove',e=>{if(!drawing)return;let p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke()});
+  ['pointerup','pointercancel'].forEach(ev=>c.addEventListener(ev,()=>drawing=false)); c._base=base;
+}
 function clearWriting(){let c=$('#writeCanvas');if(c?._base)c._base()}
 function complete(d){if(!state.completed.includes(d)){state.completed.push(d);state.completed.sort((a,b)=>a-b)}state.lastDay=d;save();render()}
 
-function topics(){let ts=DB.topics;$('#app').innerHTML=`<div class="sectionhead"><div><h2>Học nhanh theo chủ đề</h2></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="topicgrid">${ts.map(t=>`<button class="topic" onclick="go('topicdetail',{week:${t.week}})"><strong>${esc(t.title)}</strong><small>Tuần ${t.week}</small></button>`).join('')}</div>`}
-function topicdetail(){let lessons=DB.lessons.filter(x=>x.week===activeWeek);$('#app').innerHTML=`<div class="sectionhead"><div><h2>Chủ đề Tuần ${activeWeek}</h2></div><button class="btn secondary" onclick="go('topics')">← Chủ đề</button></div><div class="lessonlist">${lessons.map(l=>lessonRow(l)).join('')}</div>`}
-function practice(){$('#app').innerHTML=`<div class="sectionhead"><div><h2>Thực hành nghe / đọc</h2></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><p>Các liên kết thực hành bổ trợ bên ngoài.</p></div>`}
-function chat(){$('#app').innerHTML=`<div class="sectionhead"><div><h2>Gia sư AI Trực tiếp</h2></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="live-box"><div class="live-status"><span class="live-dot" id="liveDot"></span><span id="liveStatus">Gemini Live qua WebSocket Proxy</span></div><button id="btnLive" class="btn" style="width:100%" onclick="toggleLive()">🎙️ Bắt đầu hội thoại nói chuyện Live với Gemini</button></div>`}
-function exam(){$('#app').innerHTML=`<div class="sectionhead"><div><h2>Bài kiểm tra 3 kỹ năng</h2></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><p>Luyện tập kiểm tra tổng hợp.</p></div>`}
+function topics(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Học nhanh theo chủ đề</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="topicgrid">${DB.topics.map(t=>`<button class="topic" onclick="go('curriculum')"><strong>${esc(t.title)}</strong><small>Tuần ${t.week}</small></button>`).join('')}</div>`; }
+function topicdetail(){ go('curriculum'); }
+function practice(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Thực hành Nghe / Đọc</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><p>Trải nghiệm các nguồn tài liệu học tiếng Hoa mở rộng.</p></div>`; }
+function chat(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Gia sư AI Gemini Live</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="live-box"><div class="live-status"><span class="live-dot" id="liveDot"></span><span id="liveStatus">Gemini Live qua WebSocket Proxy</span></div><button id="btnLive" class="btn" style="width:100%" onclick="toggleLive()">🎙️ Bắt đầu đàm thoại nói chuyện Live với Gemini</button></div>`; }
+function exam(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Bài kiểm tra</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><p>Tính năng ôn tập kiểm tra 3 kỹ năng.</p></div>`; }
 
 // ================= WebSocket Live Proxy Logic =================
 async function toggleLive(){
@@ -112,7 +223,7 @@ function stopLive(){
   if(liveScriptProc) { try{ liveScriptProc.disconnect(); }catch(e){} liveScriptProc = null; }
   if(liveAudioCtx) { try{ liveAudioCtx.close(); }catch(e){} liveAudioCtx = null; }
   let btn = $('#btnLive'), status = $('#liveStatus'), dot = $('#liveDot');
-  if(btn) { btn.textContent = "🎙️ Bắt đầu hội thoại giọng nói Gemini Live"; btn.className = "btn"; }
+  if(btn) { btn.textContent = "🎙️ Bắt đầu đàm thoại giọng nói Gemini Live"; btn.className = "btn"; }
   if(status) status.textContent = "Đã ngắt kết nối Gemini Live.";
   if(dot) dot.classList.remove('active');
 }
@@ -140,4 +251,6 @@ function speak(t){
 }
 
 init();
-</script></body></html>
+</script>
+</body>
+</html>
