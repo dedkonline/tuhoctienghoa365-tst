@@ -167,4 +167,3 @@ function saveKey(){let k=$('#gemKey').value.trim();if(!k){alert('Anh chưa nhậ
 async function testKey(){let k=$('#gemKey').value.trim();if(!k){alert('Nhập API key trước nghen.');return}try{let r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':k},body:JSON.stringify({contents:[{parts:[{text:'Reply only: Kết nối thành công.'}]}]})});let j=await r.json();if(!r.ok)throw new Error(j.error?.message||'Lỗi API');sessionStorage.setItem('zh365_gemini_key',k);alert('Kết nối thành công với Gemini.');}catch(e){alert('Chưa kết nối được: '+e.message)}}
 init();
 </script></body></html>
- 
