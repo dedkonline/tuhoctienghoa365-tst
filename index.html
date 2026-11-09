@@ -3,254 +3,167 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#153e38"><meta name="description" content="Tự học tiếng Hoa phổ thông theo tiến độ linh hoạt 365 ngày, có gia sư AI, luyện nghe nói và viết chữ Hán.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <title>Tự học tiếng Hoa 365</title>
 <style>
-:root{--ink:#18332f;--muted:#667975;--paper:#f5f7f4;--card:#fff;--line:#dfe8e2;--green:#176b57;--green2:#e7f3ed;--gold:#c58a26;--red:#b54736;--shadow:0 12px 36px #173d3210}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.top{position:sticky;top:0;z-index:5;background:#fffffff2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topin{max-width:1120px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;cursor:pointer}.logo{width:42px;height:42px;border-radius:13px;background:var(--ink);color:#f3d88b;display:grid;place-items:center;font:700 23px serif}.brand strong{display:block;font-size:16px}.brand small{color:var(--muted)}.topright{display:flex;align-items:center;gap:10px}.pill{font-size:12px;border-radius:999px;padding:6px 10px;background:var(--green2);color:var(--green);font-weight:700}.iconbtn,.btn{padding:10px 14px;border-radius:12px;background:var(--green);color:white;font-weight:650}.btn.secondary{background:var(--green2);color:var(--green)}.btn.ghost{background:#f1f4f1;color:var(--ink)}.btn.danger{background:#fff0ed;color:var(--red)}.btn:disabled{opacity:.45;cursor:not-allowed}.wrap{max-width:1120px;margin:auto;padding:28px 20px 80px}.hero{background:linear-gradient(120deg,#153e38,#1d6655);color:white;border-radius:24px;padding:30px;display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:center;box-shadow:var(--shadow)}.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.13;margin:0 0 12px}.hero p{color:#d8e8e1;max-width:650px}.hero-stat{background:#ffffff15;border:1px solid #ffffff24;border-radius:18px;padding:20px}.hero-stat strong{font-size:38px;display:block}.progress{height:9px;background:#ffffff28;border-radius:20px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:#f1d58b;width:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}.tile,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.tile{cursor:pointer;transition:.18s}.tile:hover{transform:translateY(-3px);border-color:#a9cbb9}.tile .emoji{font-size:27px}.tile h3{margin:9px 0 4px}.tile p,.muted{color:var(--muted)}h2{font-size:25px;margin:28px 0 12px}h3{margin-top:0}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:28px 0 12px}.sectionhead h2{margin:0}.input{border:1px solid var(--line);background:white;border-radius:11px;padding:10px 12px;min-width:0;color:var(--ink)}.lessonlist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.lessonrow{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:white;padding:13px;border-radius:14px;cursor:pointer;text-align:left;color:var(--ink)}.lessonrow:hover{border-color:var(--green)}.num{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:var(--green2);color:var(--green);display:grid;place-items:center;font-weight:800}.lessonrow.done .num{background:var(--green);color:white}.lessonrow .desc{min-width:0;flex:1}.lessonrow strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lessonrow small{color:var(--muted)}.tag{font-size:11px;padding:4px 8px;background:#f0f3f0;border-radius:99px;color:#586a64}.tag.done{background:var(--green2);color:var(--green)}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.lessonbody{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;line-height:1.7}.lessonbody h3{font-size:21px}.lessonbody h4{margin:18px 0 6px;color:var(--green)}.lessonbody p{margin:8px 0}.lessonbody table{border-collapse:collapse;width:100%;font-size:13px}.lessonbody td,.lessonbody th{border:1px solid var(--line);padding:8px;vertical-align:top}.lessonbody th{background:#edf5f0}.topicgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.topic{padding:17px;background:white;border:1px solid var(--line);border-radius:15px;cursor:pointer;text-align:left}.topic:hover{border-color:var(--green)}.topic strong{display:block}.topic small{color:var(--muted)}.practicegrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.resource{padding:15px;border:1px solid var(--line);border-radius:14px;background:white;margin:10px 0}.resource a{color:var(--green);font-weight:700}.resource p{margin:4px 0;color:var(--muted);font-size:13px}.hide{display:none!important}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}.live-box{background:var(--green2);border:2px dashed var(--green);border-radius:16px;padding:16px;margin:14px 0;text-align:center}.live-status{font-weight:700;color:var(--green);margin-bottom:8px;font-size:14px}.live-dot{display:inline-block;width:10px;height:10px;background:var(--red);border-radius:50%;margin-right:6px}.live-dot.active{background:var(--green);animation:spin 1.5s infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding:23px}.grid3{grid-template-columns:1fr}.lessonlist{grid-template-columns:1fr}.topicgrid{grid-template-columns:1fr 1fr}.practicegrid{grid-template-columns:1fr}.wrap{padding:18px 14px 70px}.topin{padding:10px 14px}.brand small{display:none}.hero-stat{padding:14px}}
+:root{--ink:#18332f;--muted:#667975;--paper:#f5f7f4;--card:#fff;--line:#dfe8e2;--green:#176b57;--green2:#e7f3ed;--gold:#c58a26;--red:#b54736;--shadow:0 12px 36px #173d3210}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.top{position:sticky;top:0;z-index:5;background:#fffffff2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topin{max-width:1120px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;cursor:pointer}.logo{width:42px;height:42px;border-radius:13px;background:var(--ink);color:#f3d88b;display:grid;place-items:center;font:700 23px serif}.brand strong{display:block;font-size:16px}.brand small{color:var(--muted)}.topright{display:flex;align-items:center;gap:10px}.pill{font-size:12px;border-radius:999px;padding:6px 10px;background:var(--green2);color:var(--green);font-weight:700}.iconbtn,.btn{padding:10px 14px;border-radius:12px;background:var(--green);color:white;font-weight:650}.btn.secondary{background:var(--green2);color:var(--green)}.btn.ghost{background:#f1f4f1;color:var(--ink)}.btn.danger{background:#fff0ed;color:var(--red)}.btn:disabled{opacity:.45;cursor:not-allowed}.wrap{max-width:1120px;margin:auto;padding:28px 20px 80px}.hero{background:linear-gradient(120deg,#153e38,#1d6655);color:white;border-radius:24px;padding:30px;display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:center;box-shadow:var(--shadow)}.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.13;margin:0 0 12px}.hero p{color:#d8e8e1;max-width:650px}.hero-stat{background:#ffffff15;border:1px solid #ffffff24;border-radius:18px;padding:20px}.hero-stat strong{font-size:38px;display:block}.progress{height:9px;background:#ffffff28;border-radius:20px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:#f1d58b;width:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}.tile,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.tile{cursor:pointer;transition:.18s}.tile:hover{transform:translateY(-3px);border-color:#a9cbb9}.tile .emoji{font-size:27px}.tile h3{margin:9px 0 4px}.tile p,.muted{color:var(--muted)}h2{font-size:25px;margin:28px 0 12px}h3{margin-top:0}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:28px 0 12px}.sectionhead h2{margin:0}.input{border:1px solid var(--line);background:white;border-radius:11px;padding:10px 12px;min-width:0;color:var(--ink)}.lessonlist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.lessonrow{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:white;padding:13px;border-radius:14px;cursor:pointer;text-align:left;color:var(--ink)}.lessonrow:hover{border-color:var(--green)}.num{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:var(--green2);color:var(--green);display:grid;place-items:center;font-weight:800}.lessonrow.done .num{background:var(--green);color:white}.lessonrow .desc{min-width:0;flex:1}.lessonrow strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lessonrow small{color:var(--muted)}.tag{font-size:11px;padding:4px 8px;background:#f0f3f0;border-radius:99px;color:#586a64}.tag.done{background:var(--green2);color:var(--green)}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.lessonbody{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;line-height:1.7}.lessonbody h3{font-size:21px}.lessonbody h4{margin:18px 0 6px;color:var(--green)}.lessonbody p{margin:8px 0}.lessonbody table{border-collapse:collapse;width:100%;font-size:13px}.lessonbody td,.lessonbody th{border:1px solid var(--line);padding:8px;vertical-align:top}.lessonbody th{background:#edf5f0}.table-scroll{overflow-x:auto;margin:12px 0}.strokegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:16px}.strokegrid img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}.note{border-left:4px solid var(--gold);background:#fff8e9;padding:12px 15px;border-radius:0 12px 12px 0;color:#68512b;margin:14px 0}.topicgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.topic{padding:17px;background:white;border:1px solid var(--line);border-radius:15px;cursor:pointer;text-align:left}.topic:hover{border-color:var(--green)}.topic strong{display:block}.topic small{color:var(--muted)}.practicegrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.resource{padding:15px;border:1px solid var(--line);border-radius:14px;background:white;margin:10px 0}.resource a{color:var(--green);font-weight:700}.resource p{margin:4px 0;color:var(--muted);font-size:13px}.chatbox{height:min(58vh,560px);overflow:auto;background:#f6f8f6;border:1px solid var(--line);border-radius:16px;padding:14px}.bubble{max-width:88%;padding:12px 14px;border-radius:15px;margin:10px 0;white-space:pre-wrap}.bubble.ai{background:white;border:1px solid var(--line)}.bubble.me{background:var(--green);color:white;margin-left:auto}.chattools{display:flex;gap:8px;margin-top:10px}.chattools textarea{flex:1;resize:vertical;min-height:48px}.status{font-size:13px;color:var(--muted);margin:8px 0}.hide{display:none!important}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}.modal{position:fixed;inset:0;background:#102b26a8;z-index:20;display:grid;place-items:center;padding:16px}.modalbox{background:white;border-radius:20px;padding:22px;max-width:520px;width:100%;max-height:90vh;overflow:auto}.score{font-size:42px;font-weight:850;color:var(--green)}.tabs{display:flex;gap:6px;flex-wrap:wrap}.tab{background:#edf2ee;color:var(--ink);padding:8px 12px;border-radius:10px}.tab.active{background:var(--green);color:white}.small{font-size:12px}.spinner{width:16px;height:16px;border:2px solid #fff8;border-top-color:white;border-radius:50%;display:inline-block;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:23px}.grid3{grid-template-columns:1fr}.lessonlist{grid-template-columns:1fr}.topicgrid{grid-template-columns:1fr 1fr}.practicegrid{grid-template-columns:1fr}.wrap{padding:18px 14px 70px}.topin{padding:10px 14px}.brand small{display:none}.hero-stat{padding:14px}.bubble{max-width:96%}}
+
+.live-panel{background:linear-gradient(135deg,#e7f3ed,#f7fbf8);border:1px solid #b8d8c8;border-radius:16px;padding:16px;margin:14px 0}
+.live-panel h3{margin:0 0 5px}.live-panel p{margin:5px 0 12px;color:var(--muted);font-size:13px}
+.live-indicator{display:inline-block;width:9px;height:9px;border-radius:50%;background:#aab5af;margin-right:7px}
+.live-indicator.on{background:#d53b32;box-shadow:0 0 0 5px #d53b3220;animation:livepulse 1.4s infinite}
+@keyframes livepulse{50%{box-shadow:0 0 0 9px #d53b3208}}
+.live-state{font-weight:700;color:var(--green);font-size:13px;margin:8px 0}
+.live-panel .btn{min-width:210px}
 </style></head>
 <body>
-<header class="top"><div class="topin"><div class="brand" onclick="go('home')"><div class="logo">華</div><div><strong>Tự học tiếng Hoa 365</strong><small>普通话 · Gia sư AI đồng hành</small></div></div><div class="topright"><span class="pill" id="networkPill">Online</span><span class="pill" id="progressPill">0/365 buổi</span></div></div></header>
-<main class="wrap" id="app"><div class="card">Đang khởi tạo bài học...</div></main>
-<div class="footer">Học theo nhịp của mình · Tiến độ lưu cục bộ trên thiết bị</div>
-
+<header class="top"><div class="topin"><div class="brand" onclick="go('home')"><div class="logo">華</div><div><strong>Tự học tiếng Hoa 365</strong><small>普通话 · Gia sư AI đồng hành</small></div></div><div class="topright"><span class="pill" id="networkPill">Đang kiểm tra mạng</span><span class="pill" id="progressPill">0/365 buổi</span><button class="iconbtn" onclick="openSettings()" aria-label="Cài đặt">⚙</button></div></div></header>
+<main class="wrap" id="app"><div class="card">Đang tải giáo trình...</div></main><div class="footer">Học theo nhịp của mình · Không có chuỗi ngày bắt buộc · Tiến độ lưu trên thiết bị</div>
+<div id="modal" class="modal hide"><div class="modalbox" id="modalbox"></div></div>
 <script>
-const RENDER_PROXY_WSS_URL = "wss://gemini-live-proxy-69dr.onrender.com";
-let geminiLiveWs = null, liveAudioCtx = null, liveScriptProc = null, isLiveActive = false;
+const $=s=>document.querySelector(s);let DB=null,route='home',activeDay=1,activeWeek=1,chatHistory=[],recorder=null,recordChunks=[],recordTarget='',recordMode='chat',recordStarted=0,recordButtonId='',chatBusy=false;
+const GEMINI_LIVE_PROXY='wss://gemini-live-proxy-69dr.onrender.com';
+let liveWs=null,liveAudioCtx=null,liveMicStream=null,liveSource=null,liveProcessor=null,liveMuteGain=null,liveActive=false,liveOpening=false,liveNextPlayAt=0,liveSessionToken=0;
 
-const $=s=>document.querySelector(s);
-let route='home', activeDay=1, activeWeek=1;
-const KEY='zh365_progress_v2';
-let state=JSON.parse(localStorage.getItem(KEY)||'null')||{completed:[],scores:{},lastDay:1};
-
+const KEY='zh365_progress_v2';let state=JSON.parse(localStorage.getItem(KEY)||'null')||{completed:[],scores:{},lastDay:1};
 const save=()=>{localStorage.setItem(KEY,JSON.stringify(state));$('#progressPill').textContent=state.completed.length+'/365 buổi'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-// Dữ liệu bài học cơ bản tích hợp sẵn trong code
-const DEFAULT_LESSONS = Array.from({length: 365}, (_, i) => {
-  let day = i + 1;
-  return {
-    day: day,
-    week: Math.ceil(day / 7),
-    weekTitle: "Giai đoạn " + Math.ceil(day / 30),
-    title: day <= 7 ? ["Bốn thanh điệu + Số đếm 0-10", "Phụ âm b/p, d/t, g/k", "Phụ âm zh ch sh r, j q x", "Vận mẫu và biến thanh", "Ôn tập phát âm", "Chào hỏi cơ bản", "Đàm thoại chào hỏi"][day-1] : "Bài học Ngày " + day,
-    html: `<p>Nội dung học tập cho Ngày ${day}. Hãy luyện phát âm từ vựng và nhấn nút bên dưới để thực hành nói chuyện trực tiếp với Gemini Live!</p>`
-  };
-});
-
-let DB = {
-  lessons: DEFAULT_LESSONS,
-  topics: [
-    { week: 1, title: "Phát âm & Thanh điệu" },
-    { week: 2, title: "Chào hỏi cơ bản" },
-    { week: 3, title: "Giới thiệu bản thân" },
-    { week: 4, title: "Gia đình & Bạn bè" },
-    { week: 5, title: "Mua sắm & Giá cả" },
-    { week: 6, title: "Ăn uống & Gọi món" }
-  ]
-};
-
-async function init(){
-  try {
-    let r = await fetch('assets/curriculum.json');
-    if(r.ok) {
-      let data = await r.json();
-      if(data && data.lessons) DB = data;
-    }
-  } catch(e) {
-    console.log("Dùng dữ liệu tích hợp sẵn.");
-  }
-  save();
-  go('home');
-}
-
+async function init(){try{let r=await fetch('assets/curriculum.json');DB=await r.json();save();go('home');updateNetwork();window.addEventListener('online',updateNetwork);window.addEventListener('offline',updateNetwork);if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').then(()=>navigator.serviceWorker.ready.then(reg=>{let worker=reg.active;if(worker)worker.postMessage({type:'CACHE_IMAGES',urls:DB.lessons.flatMap(l=>l.images||[])});})).catch(()=>{});}catch(e){$('#app').innerHTML='<div class="card">Không tải được dữ liệu giáo trình. Hãy mở app qua Netlify hoặc máy chủ localhost, không mở trực tiếp bằng file://.</div>'}}
+function updateNetwork(){let e=$('#networkPill');if(e){e.textContent=navigator.onLine?'Online':'Offline';e.style.background=navigator.onLine?'var(--green2)':'#fff0d9';e.style.color=navigator.onLine?'var(--green)':'#875b16'}}
 function go(r,p={}){route=r;if(p.day)activeDay=p.day;if(p.week)activeWeek=p.week;render()}
-function render(){({home:home,curriculum:curriculum,lesson:lesson,topics:topics,topicdetail:topicdetail,practice:practice,chat:chat,exam:exam}[route]||home)()}
-
-function home(){
-  let n=state.completed.length;
-  $('#app').innerHTML=`
-  <section class="hero">
-    <div>
-      <div class="pill" style="background:#ffffff20;color:#f5df9f">LỘ TRÌNH LINH HOẠT</div>
-      <h1>Học tiếng Hoa<br>theo nhịp của anh.</h1>
-      <p>Không cần học đúng ngày, không mất tiến độ khi nghỉ. Chọn bài muốn học, học lại hoặc học vượt bất cứ lúc nào.</p>
-      <div class="row">
-        <button class="btn" onclick="go('lesson',{day:${state.lastDay||1}})">Tiếp tục học · Ngày ${state.lastDay||1}</button>
-        <button class="btn secondary" onclick="go('curriculum')">Chọn ngày học</button>
-      </div>
-    </div>
-    <div class="hero-stat">
-      <span>Tiến độ hoàn thành</span>
-      <strong>${n}<small style="font-size:18px;font-weight:500"> / 365</small></strong>
-      <div class="progress"><span style="width:${n/365*100}%"></span></div>
-      <small>${n?`Đã hoàn thành ${n} buổi học.`:'Bắt đầu từ Ngày 1/365 khi sẵn sàng.'}</small>
-    </div>
-  </section>
-  <div class="grid3">
-    <div class="tile" onclick="go('curriculum')"><div class="emoji">📚</div><h3>Học theo giáo trình 365</h3><p>Chọn ngày, học lại, học vượt; bài học có từ vựng và ngữ pháp.</p></div>
-    <div class="tile" onclick="go('topics')"><div class="emoji">🧭</div><h3>Học nhanh theo chủ đề</h3><p>Đi thẳng tới nhóm bài theo tình huống giao tiếp.</p></div>
-    <div class="tile" onclick="go('practice')"><div class="emoji">🎧</div><h3>Thực hành nghe / đọc</h3><p>Clip nghe và bài đọc ngắn trợ giúp.</p></div>
-  </div>
-  <div class="sectionhead"><h2>Học tiếp</h2><div class="row"><button class="btn secondary" onclick="go('chat')">💬 Gia sư AI Live</button></div></div>
-  <div class="card"><div class="row between"><div><strong>Ngày ${state.lastDay||1}/365</strong><div class="muted">${DB.lessons[state.lastDay-1]?.title||'Bài học Ngày '+state.lastDay}</div></div><button class="btn" onclick="go('lesson',{day:state.lastDay||1})">Mở bài</button></div></div>`;
-}
-
-function curriculum(){
-  $('#app').innerHTML=`
-  <div class="sectionhead"><div><h2>Giáo trình 365 ngày</h2><div class="muted">Chọn bất kỳ ngày nào để học</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div>
-  <div class="card"><div class="row"><label for="daypick"><b>Đi tới ngày học</b></label><input id="daypick" class="input" type="number" min="1" max="365" value="${activeDay}" style="width:110px"><button class="btn" onclick="let v=+$('#daypick').value;if(v>=1&&v<=365)go('lesson',{day:v})">Mở bài</button></div></div>
-  <h3 style="margin-top:24px">Danh sách 365 buổi học</h3>
-  <div class="lessonlist" id="lessonlist">${DB.lessons.map(l=>lessonRow(l)).join('')}</div>`;
-}
-
-function lessonRow(l){
-  let done=state.completed.includes(l.day);
-  return `<button class="lessonrow ${done?'done':''}" onclick="go('lesson',{day:${l.day}})"><span class="num">${done?'✓':l.day}</span><span class="desc"><strong>Ngày ${l.day}: ${esc(l.title)}</strong><small>Tuần ${l.week}</small></span><span class="tag ${done?'done':''}">${done?'Đã học':'Mở bài'}</span></button>`;
-}
-
-function lesson(){
-  let l=DB.lessons[activeDay-1] || {day: activeDay, title: "Ngày "+activeDay, html: "<p>Bài học Ngày "+activeDay+"</p>"};
-  state.lastDay=activeDay; save();
-  let done=state.completed.includes(l.day);
-  $('#app').innerHTML=`
-  <div class="sectionhead"><div><div class="muted">Bài học Ngày ${l.day}</div><h2>${esc(l.title)}</h2></div><button class="btn secondary" onclick="go('curriculum')">← Chọn ngày</button></div>
-  
-  <div class="live-box">
-    <div class="live-status"><span class="live-dot" id="liveDot"></span><span id="liveStatus">Gemini Live kết nối qua Backend Proxy</span></div>
-    <button id="btnLive" class="btn" style="width:100%" onclick="toggleLive()">🎙️ Bắt đầu đàm thoại giọng nói Gemini Live</button>
-  </div>
-
-  <div class="bar">
-    <button class="btn secondary" onclick="speak('${esc(l.title).replace(/'/g,"\\'")}')">🔊 Nghe tên bài</button>
-    <button class="btn ${done?'ghost':''}" onclick="complete(${l.day})">${done?'✓ Đã hoàn thành':'Đánh dấu hoàn thành'}</button>
-  </div>
-  <div class="lessonbody">${l.html}</div>
-  
-  <div class="card" style="margin-top:18px">
-    <h3>Luyện viết chữ Hán bằng tay / chuột</h3>
-    <div class="row"><label for="writeChar"><b>Chữ cần luyện</b></label><input id="writeChar" class="input" value="好" maxlength="2" style="width:90px;font-size:22px"><button class="btn secondary" onclick="clearWriting()">Xóa nét viết</button></div>
-    <canvas id="writeCanvas" width="520" height="520" style="display:block;width:min(100%,360px);height:auto;margin:14px auto 0;border:1px solid var(--line);border-radius:12px;background:#fff;touch-action:none"></canvas>
-  </div>
-  
-  <div class="row between" style="margin-top:18px">
-    <button class="btn ghost" ${l.day===1?'disabled':''} onclick="go('lesson',{day:${Math.max(1,l.day-1)}})">← Bài trước</button>
-    <button class="btn" onclick="go('lesson',{day:${Math.min(365,l.day+1)}})">Bài kế →</button>
-  </div>`;
-  setupWritingPad();
-}
-
-function setupWritingPad(){
-  let c=$('#writeCanvas'),input=$('#writeChar'); if(!c||!input)return;
-  let ctx=c.getContext('2d'),drawing=false;
-  function base(){
-    ctx.clearRect(0,0,c.width,c.height); ctx.strokeStyle='#d8e4dc'; ctx.lineWidth=2; ctx.setLineDash([8,8]);
-    ctx.strokeRect(8,8,c.width-16,c.height-16); ctx.beginPath(); ctx.moveTo(c.width/2,8); ctx.lineTo(c.width/2,c.height-8);
-    ctx.moveTo(8,c.height/2); ctx.lineTo(c.width-8,c.height/2); ctx.stroke(); ctx.setLineDash([]);
-    ctx.fillStyle='rgba(23,107,87,.14)'; ctx.font='280px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.fillText(input.value||'字',c.width/2,c.height/2+8);
-  }
-  function point(e){ let r=c.getBoundingClientRect(); return {x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height} }
-  base(); input.addEventListener('input',base);
-  c.addEventListener('pointerdown',e=>{drawing=true;c.setPointerCapture(e.pointerId);let p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.strokeStyle='#18332f';ctx.lineWidth=10;ctx.lineCap='round';ctx.lineJoin='round'});
-  c.addEventListener('pointermove',e=>{if(!drawing)return;let p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke()});
-  ['pointerup','pointercancel'].forEach(ev=>c.addEventListener(ev,()=>drawing=false)); c._base=base;
-}
+function render(){if(!DB)return;({home:home,curriculum:curriculum,lesson:lesson,topics:topics,topicdetail:topicdetail,practice:practice,chat:chat,exam:exam}[route]||home)()}
+function home(){let n=state.completed.length;$('#app').innerHTML=`<section class="hero"><div><div class="pill" style="background:#ffffff20;color:#f5df9f">LỘ TRÌNH LINH HOẠT</div><h1>Học tiếng Hoa<br>theo nhịp của anh.</h1><p>Không cần học đúng ngày, không mất tiến độ khi nghỉ. Chọn bài muốn học, học lại hoặc học vượt bất cứ lúc nào.</p><div class="row"><button class="btn" onclick="go('lesson',{day:${state.lastDay||1}})">Tiếp tục học · Ngày ${state.lastDay||1}</button><button class="btn secondary" onclick="go('curriculum')">Chọn ngày học</button></div></div><div class="hero-stat"><span>Tiến độ hoàn thành</span><strong>${n}<small style="font-size:18px;font-weight:500"> / 365</small></strong><div class="progress"><span style="width:${n/365*100}%"></span></div><small>${n?`Đã hoàn thành ${n} buổi học.`:'Bắt đầu từ Ngày 1/365 khi sẵn sàng.'}</small><p class="small" style="color:#d8e8e1">Tiến độ lưu cục bộ trên thiết bị này.</p></div></section>
+<div class="grid3"><div class="tile" onclick="go('curriculum')"><div class="emoji">📚</div><h3>Học theo giáo trình 365</h3><p>Chọn ngày, học lại, học vượt; bài học có từ vựng, ngữ pháp và chữ Hán.</p></div><div class="tile" onclick="go('topics')"><div class="emoji">🧭</div><h3>Học nhanh theo chủ đề</h3><p>Đi thẳng tới nhóm bài theo tình huống giao tiếp.</p></div><div class="tile" onclick="go('practice')"><div class="emoji">🎧</div><h3>Thực hành nghe / đọc</h3><p>Clip nghe và bài đọc ngắn từ các nguồn học tiếng Hoa.</p></div></div>
+<div class="sectionhead"><h2>Học tiếp</h2><div class="row"><button class="btn secondary" onclick="go('exam')">📝 Kiểm tra 3 kỹ năng</button><button class="btn secondary" onclick="go('chat')">💬 Trò chuyện với gia sư AI</button></div></div><div class="card"><div class="row between"><div><strong>Ngày ${state.lastDay||1}/365</strong><div class="muted">${DB.lessons[state.lastDay-1]?.title||'Bài học chưa có trong tài liệu nguồn'}</div></div><button class="btn" onclick="go('lesson',{day:state.lastDay||1})">Mở bài</button></div></div>
+<div class="note">Lưu ý về nội dung: tài liệu Word hiện cung cấp 13 tuần × 6 buổi = 78 buổi học. App mở sẵn bộ chọn 365 ngày, nhưng Ngày 79–365 sẽ được đánh dấu chưa có bài trong file gốc, không tự tạo nội dung giả.</div>`}
+function curriculum(){let val='';$('#app').innerHTML=`<div class="sectionhead"><div><h2>Giáo trình 365 ngày</h2><div class="muted">Chọn bất kỳ ngày nào · Không khóa bài theo lịch</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><div class="row"><label for="daypick"><b>Đi tới ngày học</b></label><input id="daypick" class="input" type="number" min="1" max="365" value="${activeDay}" style="width:110px"><button class="btn" onclick="let v=+$('#daypick').value;if(v>=1&&v<=365)go('lesson',{day:v})">Mở bài</button><input id="filterLesson" class="input" placeholder="Tìm chủ đề..." style="flex:1"></div></div><h3 style="margin-top:24px">78 buổi có nội dung trong giáo trình gốc</h3><div class="lessonlist" id="lessonlist">${DB.lessons.map(l=>lessonRow(l)).join('')}</div><h3 style="margin-top:28px">Ngày 79–365 · Chưa có nội dung trong file nguồn</h3><div class="note">Có thể chọn các ngày này để xem trạng thái và giữ chỗ cho giai đoạn tiếp theo. Tôi không tự gán từ vựng hoặc ngữ pháp không có trong giáo trình.</div><div class="lessonlist">${Array.from({length:287},(_,i)=>{let d=i+79;return `<button class="lessonrow" onclick="go('lesson',{day:${d}})"><span class="num">${d}</span><span class="desc"><strong>Ngày ${d}/365</strong><small>Chưa có nội dung trong tài liệu gốc</small></span><span class="tag">Chờ bổ sung</span></button>`}).join('')}</div>`;
+$('#filterLesson').addEventListener('input',e=>{let q=e.target.value.toLowerCase();document.querySelectorAll('#lessonlist .lessonrow').forEach(el=>{el.classList.toggle('hide',!el.dataset.search.includes(q));});});}
+function lessonRow(l){let done=state.completed.includes(l.day);return `<button class="lessonrow ${done?'done':''}" data-search="${esc((l.title+' '+l.weekTitle).toLowerCase())}" onclick="go('lesson',{day:${l.day}})"><span class="num">${done?'✓':l.day}</span><span class="desc"><strong>${esc(l.title)}</strong><small>Tuần ${l.week} · ${esc(l.weekTitle)}</small></span><span class="tag ${done?'done':''}">${done?'Đã học':'Mở bài'}</span></button>`}
+function vocabCards(l){try{let doc=new DOMParser().parseFromString(l.html,'text/html');let tables=[...doc.querySelectorAll('table')];let t=tables.find(x=>x.querySelector('tr')?.textContent.includes('Giản thể')&&x.querySelector('tr')?.textContent.includes('Pinyin'));if(!t)return '';let rows=[...t.querySelectorAll('tr')].slice(1);let cards=rows.map((r,i)=>{let c=[...r.querySelectorAll('td,th')].map(x=>x.textContent.trim());if(c.length<5||!c[0]||!/[\u3400-\u9fff]/.test(c[0]))return '';let z=c[0],py=c[2]||'',vi=c[4]||'';let strokes=[...z].map(ch=>{let path=DB.strokeMap?.[ch]?.[0];return path?`<div><b style="font-size:20px">${esc(ch)}</b><img loading="lazy" src="${path}" alt="Thứ tự nét chữ ${esc(ch)}"></div>`:''}).filter(Boolean).join('');return `<div class="resource"><div class="row between"><div><strong style="font:700 27px serif">${esc(z)}</strong><div class="muted">${esc(py)} · ${esc(vi)}</div></div><div class="row"><button class="btn secondary" onclick="speak('${esc(z).replace(/'/g,"\\'")}')">🔊 Nghe</button><button class="btn ghost" id="recword${l.day}_${i}" onclick="startRecord('pronounce','${esc(z).replace(/'/g,"\\'")}','recword${l.day}_${i}')">🎙️ Nói</button></div></div>${strokes?`<details style="margin-top:10px"><summary style="cursor:pointer;color:var(--green);font-weight:700">Xem thứ tự viết từng nét</summary><div class="strokegrid">${strokes}</div></details>`:''}</div>`}).filter(Boolean);return cards.length?`<h3 style="margin-top:24px">Từ vựng · nghe mẫu và tự đọc</h3><div class="practicegrid">${cards.join('')}</div>`:''}catch(e){return ''}}
+function lesson(){let l=DB.lessons[activeDay-1];state.lastDay=activeDay;save();if(!l){$('#app').innerHTML=`<div class="sectionhead"><div><h2>Ngày ${activeDay}/365</h2><div class="muted">Chưa có nội dung trong giáo trình Word hiện tại.</div></div><button class="btn secondary" onclick="go('curriculum')">← Danh sách</button></div><div class="card"><div class="note">Tài liệu nguồn mới có 78 buổi học thuộc Giai đoạn 1. Ngày ${activeDay} được giữ làm vị trí mở rộng, chưa có từ vựng, bài ngữ pháp hay hội thoại để dạy.</div><button class="btn" onclick="go('chat');startTutor('Tôi đang ở ngày '+activeDay+'/365. Hãy kiểm tra trình độ hiện tại bằng các câu hỏi đã học trong 78 buổi đầu, không tự giả định tôi đã học nội dung chưa có.')">Ôn tập với gia sư AI</button></div>`;return}
+let done=state.completed.includes(l.day);$('#app').innerHTML=`<div class="sectionhead"><div><div class="muted">Tuần ${l.week} · ${esc(l.weekTitle)}</div><h2>Ngày ${l.day}/365 — ${esc(l.title)}</h2><div class="muted">Buổi học độc lập, không gắn với thứ hoặc ngày tháng.</div></div><button class="btn secondary" onclick="go('curriculum')">← Chọn ngày</button></div><div class="bar"><button class="btn secondary" onclick="speak('你好。我们开始今天的学习。')">🔊 Chào lớp</button><button class="btn secondary" onclick="go('chat');startTutor('Hãy dạy tôi bài Ngày '+l.day+': '+l.title+'. Dựa trên nội dung giáo trình hiển thị trong app; bắt đầu bằng kiểm tra bài cũ.')">👨‍🏫 Học cùng gia sư AI</button><button class="btn ${done?'ghost':''}" onclick="complete(${l.day})">${done?'✓ Đã hoàn thành':'Đánh dấu hoàn thành'}</button></div>${livePanelHTML(`Anh đang học Ngày ${l.day}: ${l.title}. Hãy đóng vai gia sư tiếng Hoa, ưu tiên luyện nói nội dung bài này.`)}<div class="lessonbody"><div class="note">Bài học được trích từ giáo trình gốc. Học theo trình tự: đọc nội dung, nghe mẫu, tự nói, viết chữ và luyện hội thoại với gia sư.</div>${l.html||'<p>Nội dung buổi học.</p>'}</div>${vocabCards(l)}<div class="card" style="margin-top:18px"><h3>Luyện viết bằng tay / chuột</h3><p class="muted">Nhìn thứ tự nét phía trên, rồi tự viết lại chữ trong ô vuông bằng ngón tay trên smartphone hoặc chuột trên PC.</p><div class="row"><label for="writeChar"><b>Chữ cần luyện</b></label><input id="writeChar" class="input" value="一" maxlength="2" style="width:90px;font-size:22px"><button class="btn secondary" onclick="clearWriting()">Xóa nét viết</button></div><canvas id="writeCanvas" width="520" height="520" style="display:block;width:min(100%,420px);height:auto;margin:14px auto 0;border:1px solid var(--line);border-radius:12px;background:#fff;touch-action:none"></canvas></div>${l.images?.length?`<h3 style="margin-top:24px">Hình thứ tự nét / tư liệu chữ Hán trong giáo trình</h3><div class="strokegrid">${l.images.map((im,i)=>`<a href="${im}" target="_blank" rel="noopener"><img loading="lazy" src="${im}" alt="Hình thứ tự nét chữ Hán ${i+1}"></a>`).join('')}</div>`:''}<div class="card" style="margin-top:20px"><h3>Thực hành với gia sư</h3><p class="muted">Kiểm tra bài cũ → từ vựng và ngữ pháp → luyện nói theo ngữ cảnh. AI sẽ yêu cầu nói lại khi chưa nghe rõ hoặc câu chưa đúng.</p><div class="row"><button class="btn" onclick="go('chat');startTutor('Bắt đầu buổi học Ngày ${l.day}. Hãy kiểm tra bài cũ trước, sau đó dạy từ vựng, ngữ pháp và đàm thoại theo đúng nội dung bài. Hỏi từng câu, đợi tôi trả lời rồi mới tiếp tục.')">Bắt đầu buổi học có hướng dẫn</button><button class="btn secondary" onclick="speak('${esc(l.title).replace(/'/g,"\\'")}')">🔊 Nghe tên bài</button></div></div><div class="row between" style="margin-top:18px"><button class="btn ghost" ${l.day===1?'disabled':''} onclick="go('lesson',{day:${Math.max(1,l.day-1)}})">← Bài trước</button><button class="btn" onclick="go('lesson',{day:${Math.min(365,l.day+1)}})">Bài kế →</button></div>`;setupWritingPad()}
+function setupWritingPad(){let c=$('#writeCanvas'),input=$('#writeChar');if(!c||!input)return;let ctx=c.getContext('2d'),drawing=false;function base(){ctx.clearRect(0,0,c.width,c.height);ctx.strokeStyle='#d8e4dc';ctx.lineWidth=2;ctx.setLineDash([8,8]);ctx.strokeRect(8,8,c.width-16,c.height-16);ctx.beginPath();ctx.moveTo(c.width/2,8);ctx.lineTo(c.width/2,c.height-8);ctx.moveTo(8,c.height/2);ctx.lineTo(c.width-8,c.height/2);ctx.stroke();ctx.setLineDash([4,8]);ctx.beginPath();ctx.moveTo(8,8);ctx.lineTo(c.width-8,c.height-8);ctx.moveTo(c.width-8,8);ctx.lineTo(8,c.height-8);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='rgba(23,107,87,.14)';ctx.font='300px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(input.value||'字',c.width/2,c.height/2+8)}function point(e){let r=c.getBoundingClientRect();return {x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height}}base();input.addEventListener('input',base);c.addEventListener('pointerdown',e=>{drawing=true;c.setPointerCapture(e.pointerId);let p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.strokeStyle='#18332f';ctx.lineWidth=9;ctx.lineCap='round';ctx.lineJoin='round'});c.addEventListener('pointermove',e=>{if(!drawing)return;let p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke()});['pointerup','pointercancel','lostpointercapture'].forEach(ev=>c.addEventListener(ev,()=>drawing=false));c._base=base}
 function clearWriting(){let c=$('#writeCanvas');if(c?._base)c._base()}
-function complete(d){if(!state.completed.includes(d)){state.completed.push(d);state.completed.sort((a,b)=>a-b)}state.lastDay=d;save();render()}
+function complete(d){if(!state.completed.includes(d)){state.completed.push(d);state.completed.sort((a,b)=>a-b)}state.lastDay=d;save();if(state.completed.length%5===0){showExamPrompt(d)}else{render()}}
+function showExamPrompt(d){modal(`<h2>Đã hoàn thành ${state.completed.length} buổi</h2><p>Sau mỗi 5 buổi học, app mở bài kiểm tra 3 kỹ năng: nghe – đọc – nói.</p><div class="row"><button class="btn" onclick="closeModal();go('exam')">Làm bài kiểm tra ngay</button><button class="btn secondary" onclick="closeModal();go('home')">Để làm sau</button></div>`)}
+function topics(){let ts=DB.topics;$('#app').innerHTML=`<div class="sectionhead"><div><h2>Học nhanh theo chủ đề</h2><div class="muted">Chọn chủ đề để đi thẳng tới các buổi học liên quan.</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="topicgrid">${ts.map(t=>`<button class="topic" onclick="go('topicdetail',{week:${t.week}})"><strong>${esc(t.title)}</strong><small>Tuần ${t.week} · Ngày ${t.dayStart}–${t.dayEnd}/365</small><div style="margin-top:10px;color:var(--green);font-weight:700">Xem bài học →</div></button>`).join('')}</div><div class="note">Các chủ đề trên được lấy từ 12 tuần nội dung đầu của giáo trình. Chọn chủ đề sẽ mở đúng nhóm bài, không quay ngược về trang chủ.</div>`}
+function topicdetail(){let w=DB.weeks.find(x=>x.week===activeWeek);let lessons=DB.lessons.filter(x=>x.week===activeWeek);$('#app').innerHTML=`<div class="sectionhead"><div><h2>${esc(w.title)}</h2><div class="muted">Các buổi thuộc chủ đề này</div></div><button class="btn secondary" onclick="go('topics')">← Chủ đề</button></div><div class="lessonlist">${lessons.map(l=>lessonRow(l)).join('')}</div>`}
+function practice(){let listening=[['HearMandarin – luyện nghe theo cấp độ','https://hearmandarin.com/','Nghe từ vựng, hội thoại và truyện phân cấp; dùng được ngay trên trình duyệt.'],['Mandarin Click – bài nghe ngắn','https://www.youtube.com/@MandarinClick','Kênh YouTube có truyện ngắn và nội dung luyện nghe tiếng Hoa.'],['MandaChinese – nghe và đọc tương tác','https://mandachinese.com/','Nền tảng đọc tương tác có phát âm và thư viện nội dung miễn phí.']];let reading=[['MandaChinese – thư viện bài đọc','https://mandachinese.com/','Nền tảng miễn phí, không quảng cáo theo thông tin công bố trên website; có thư viện bài đọc và audio.'],['HearMandarin – truyện ngắn phân cấp','https://hearmandarin.com/','Thư viện truyện và hội thoại ngắn, có audio và từ vựng theo cấp độ.'],['Chinese Grammar Wiki – bài đọc ngữ pháp','https://resources.allsetlearning.com/chinese/grammar/Main_Page','Tra cứu ngữ pháp có hệ thống, ví dụ rõ; dùng khi cần đọc sâu hơn.']];$('#app').innerHTML=`<div class="sectionhead"><div><h2>Thực hành nghe / đọc</h2><div class="muted">Nguồn ngoài được chọn theo tiêu chí chuyên về học tiếng Hoa, có nội dung miễn phí hoặc phần miễn phí rõ ràng.</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="tabs"><button class="tab active" onclick="showPracticeTab('listen',this)">🎧 Nghe</button><button class="tab" onclick="showPracticeTab('read',this)">📖 Đọc</button></div><div id="practiceContent" class="practicegrid" style="margin-top:14px"><div><h3>Nghe · clips ngắn</h3>${listening.map(x=>resource(x)).join('')}</div><div><h3>Đọc · bài ngắn</h3>${reading.map(x=>resource(x)).join('')}</div></div><div class="note">An toàn liên kết: app chỉ mở các tên miền đã chọn, dùng HTTPS và mở tab mới với rel=noopener. MandaChinese công bố nền tảng miễn phí và không quảng cáo; các kênh YouTube vẫn có thể xuất hiện quảng cáo do chính YouTube phân phối. Nội dung và chính sách website bên ngoài có thể thay đổi sau thời điểm kiểm tra. Không nhập mật khẩu hay thông tin thanh toán từ các trang này.</div>`}
+function resource(x){return `<div class="resource"><a href="${x[1]}" target="_blank" rel="noopener noreferrer">${esc(x[0])} ↗</a><p>${esc(x[2])}</p><span class="small muted">Mở website bên ngoài · HTTPS</span></div>`}
+function showPracticeTab(which,btn){document.querySelectorAll('.tabs .tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');let c=$('#practiceContent');let a=which==='listen'?[['HearMandarin – luyện nghe theo cấp độ','https://hearmandarin.com/','Nghe từ vựng, hội thoại và truyện phân cấp.'],['Mandarin Click – bài nghe ngắn','https://www.youtube.com/@MandarinClick','Kênh YouTube có truyện ngắn và nội dung luyện nghe.'],['MandaChinese – nghe và đọc tương tác','https://mandachinese.com/','Nền tảng đọc tương tác có phát âm và thư viện miễn phí.']]:[['MandaChinese – thư viện bài đọc','https://mandachinese.com/','Nền tảng miễn phí, không quảng cáo theo thông tin công bố trên website.'],['HearMandarin – truyện ngắn phân cấp','https://hearmandarin.com/','Truyện và hội thoại ngắn, có audio và từ vựng theo cấp độ.'],['Chinese Grammar Wiki','https://resources.allsetlearning.com/chinese/grammar/Main_Page','Tra cứu ngữ pháp theo cấp độ và ví dụ.']];c.innerHTML=`<div><h3>${which==='listen'?'Nghe · clips ngắn':'Đọc · bài ngắn'}</h3>${a.map(x=>resource(x)).join('')}</div>`}
+function chat(){if(!chatHistory.length)chatHistory=[{role:'model',parts:[{text:'你好！我是你的普通话老师。Chào anh, hôm nay mình học tiếng Hoa. Trước tiên, anh muốn bắt đầu bằng kiểm tra bài cũ hay luyện một tình huống giao tiếp?'}]}];$('#app').innerHTML=`<div class="sectionhead"><div><h2>Gia sư AI · Đàm thoại hai chiều</h2><div class="muted">Nói hoặc gõ câu trả lời; AI giữ ngữ cảnh qua nhiều lượt.</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="note">Chế độ Live bên dưới kết nối qua máy chủ trung gian đã được cấu hình trong phiên bản Gemini chỉnh sửa; không cần nhập API key trong app. Chế độ chat văn bản / ghi âm phân tích ở bên dưới vẫn dùng Gemini API key riêng.</div>${livePanelHTML("Bạn là gia sư tiếng Phổ thông Trung Quốc (普通话), dạy người Việt bằng tiếng Việt miền Nam tự nhiên. Hỏi từng câu, đợi người học trả lời, sửa phát âm và ngữ pháp khi đủ dữ liệu. Không độc thoại dài.")}<div class="card"><div class="row between"><strong>Cuộc trò chuyện</strong><div class="row"><button class="btn secondary" onclick="clearChat()">Cuộc trò chuyện mới</button><button class="btn ghost" onclick="openSettings()">Cài Gemini</button></div></div><div id="chatbox" class="chatbox">${chatHistory.map(bubble).join('')}</div><div class="chattools"><textarea id="chatInput" class="input" placeholder="Nhập câu tiếng Hoa hoặc tiếng Việt..."></textarea><button class="btn" onclick="sendText()">Gửi</button></div><div class="row" style="margin-top:10px"><button class="btn secondary" id="recordChat" onclick="startRecord('chat')">🎙️ Nhấn để nói</button><button class="btn ghost" onclick="speakLastChinese()">🔊 Đọc câu tiếng Hoa của gia sư</button><span class="status" id="chatStatus">Sẵn sàng</span></div></div>`;$('#chatbox').scrollTop=$('#chatbox').scrollHeight}
 
-function topics(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Học nhanh theo chủ đề</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="topicgrid">${DB.topics.map(t=>`<button class="topic" onclick="go('curriculum')"><strong>${esc(t.title)}</strong><small>Tuần ${t.week}</small></button>`).join('')}</div>`; }
-function topicdetail(){ go('curriculum'); }
-function practice(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Thực hành Nghe / Đọc</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><p>Trải nghiệm các nguồn tài liệu học tiếng Hoa mở rộng.</p></div>`; }
-function chat(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Gia sư AI Gemini Live</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="live-box"><div class="live-status"><span class="live-dot" id="liveDot"></span><span id="liveStatus">Gemini Live qua WebSocket Proxy</span></div><button id="btnLive" class="btn" style="width:100%" onclick="toggleLive()">🎙️ Bắt đầu đàm thoại nói chuyện Live với Gemini</button></div>`; }
-function exam(){ $('#app').innerHTML=`<div class="sectionhead"><h2>Bài kiểm tra</h2><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><p>Tính năng ôn tập kiểm tra 3 kỹ năng.</p></div>`; }
-
-// ================= WebSocket Live Proxy Logic =================
-async function toggleLive(){
-  let btn = $('#btnLive'), status = $('#liveStatus'), dot = $('#liveDot');
-  if(isLiveActive){ stopLive(); return; }
+function livePanelHTML(prompt){
+  const safe=esc(prompt);
+  return `<section class="live-panel"><h3>🎙️ Thực hành hội thoại trực tiếp với Gemini Live</h3>
+  <p>Đàm thoại giọng nói hai chiều theo thời gian thực. Bấm bắt đầu, cho phép microphone, rồi nói tiếng Hoa hoặc tiếng Việt. Không cần nhập API key trong app.</p>
+  <div class="live-state"><span class="live-indicator" id="liveIndicator"></span><span id="liveState">Chưa kết nối · Gemini Live qua máy chủ trung gian</span></div>
+  <div class="row"><button class="btn" id="liveToggle" onclick="toggleGeminiLive(decodeURIComponent('${encodeURIComponent(safe)}'))">🎙️ Bắt đầu Gemini Live</button><span class="small muted">Cần Internet và quyền microphone</span></div></section>`;
+}
+async function toggleGeminiLive(prompt=''){
+  if(liveActive||liveOpening){stopGeminiLive('Đã ngắt kết nối.');return}
+  if(!navigator.mediaDevices?.getUserMedia||!window.WebSocket){setLiveStatus('Trình duyệt không hỗ trợ microphone hoặc WebSocket. Hãy dùng Chrome, Edge hoặc Safari mới.');return}
+  liveOpening=true;const token=++liveSessionToken;setLiveStatus('Đang kết nối Gemini Live...');
+  const btn=$('#liveToggle');if(btn){btn.disabled=true;btn.textContent='Đang kết nối...'}
   try{
-    status.textContent = "Đang kết nối Server Proxy Render...";
-    geminiLiveWs = new WebSocket(RENDER_PROXY_WSS_URL);
-    geminiLiveWs.onopen = async () => {
-      status.textContent = "🔴 Gemini Live đang nghe... Hãy nói tiếng Trung!";
-      if(dot) dot.classList.add('active');
-      if(btn) { btn.textContent = "⏹ Dừng nói chuyện Live"; btn.className = "btn danger"; }
-      isLiveActive = true;
-      await startLiveMic();
+    const ws=new WebSocket(GEMINI_LIVE_PROXY);liveWs=ws;
+    ws.onopen=async()=>{
+      if(token!==liveSessionToken)return;
+      try{
+        liveMicStream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+        if(token!==liveSessionToken){liveMicStream.getTracks().forEach(t=>t.stop());return}
+        liveAudioCtx=new (window.AudioContext||window.webkitAudioContext)({sampleRate:16000});
+        await liveAudioCtx.resume();
+        liveSource=liveAudioCtx.createMediaStreamSource(liveMicStream);
+        liveProcessor=liveAudioCtx.createScriptProcessor(4096,1,1);
+        liveMuteGain=liveAudioCtx.createGain();liveMuteGain.gain.value=0;
+        liveProcessor.onaudioprocess=e=>{
+          if(!liveActive||!liveWs||liveWs.readyState!==WebSocket.OPEN)return;
+          const input=e.inputBuffer.getChannelData(0);
+          const actualRate=liveAudioCtx.sampleRate;
+          const samples=actualRate===16000?input:resampleAudio(input,actualRate,16000);
+          const pcm=new ArrayBuffer(samples.length*2),view=new DataView(pcm);
+          for(let i=0;i<samples.length;i++){const v=Math.max(-1,Math.min(1,samples[i]));view.setInt16(i*2,v<0?v*32768:v*32767,true)}
+          const bytes=new Uint8Array(pcm);let binary='';const chunk=0x8000;
+          for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.subarray(i,Math.min(i+chunk,bytes.length)));
+          try{liveWs.send(JSON.stringify({realtimeInput:{mediaChunks:[{mimeType:'audio/pcm',data:btoa(binary)}]}}))}catch(err){setLiveStatus('Mất kết nối khi gửi âm thanh.')}
+        };
+        liveSource.connect(liveProcessor);liveProcessor.connect(liveMuteGain);liveMuteGain.connect(liveAudioCtx.destination);
+        liveActive=true;liveOpening=false;liveNextPlayAt=0;
+        setLiveStatus('Gemini Live đang nghe · Anh hãy bắt đầu nói.');
+        const b=$('#liveToggle');if(b){b.disabled=false;b.textContent='⏹ Dừng Gemini Live';b.classList.add('danger')}
+      }catch(err){stopGeminiLive('Không mở được microphone: '+err.message)}
     };
-    geminiLiveWs.onmessage = (e) => {
-      try {
-        let msg = JSON.parse(e.data);
-        if (msg.serverContent?.modelTurn?.parts) {
-          for (let part of msg.serverContent.modelTurn.parts) {
-            if (part.inlineData?.mimeType?.startsWith('audio/pcm')) playPCM(part.inlineData.data);
-          }
-        }
-      } catch(err){}
+    ws.onmessage=e=>{
+      if(token!==liveSessionToken)return;
+      try{
+        const msg=JSON.parse(e.data);
+        const parts=msg.serverContent?.modelTurn?.parts||[];
+        for(const part of parts){if(part.inlineData?.data&&part.inlineData?.mimeType?.includes('audio/pcm'))queueLivePCM(part.inlineData.data,24000)}
+        if(msg.serverContent?.turnComplete)setLiveStatus('Gemini đã trả lời · Anh có thể nói tiếp.');
+        if(msg.error)setLiveStatus('Gemini Live báo lỗi: '+(msg.error.message||'không rõ nguyên nhân'));
+      }catch(err){/* Bỏ qua gói không phải JSON hoặc gói trung gian */}
     };
-    geminiLiveWs.onclose = () => stopLive();
-    geminiLiveWs.onerror = () => { status.textContent = "Lỗi kết nối Render Server!"; stopLive(); };
-  }catch(e){ stopLive(); }
+    ws.onerror=()=>{if(token===liveSessionToken)stopGeminiLive('Không kết nối được máy chủ Gemini Live. Kiểm tra mạng hoặc máy chủ proxy.')}
+    ws.onclose=()=>{if(token===liveSessionToken&&(liveActive||liveOpening))stopGeminiLive('Phiên Gemini Live đã đóng.')}
+  }catch(err){stopGeminiLive('Lỗi khởi tạo Gemini Live: '+err.message)}
 }
-
-async function startLiveMic(){
+function resampleAudio(input,fromRate,toRate){
+  if(fromRate===toRate)return input;
+  const ratio=fromRate/toRate,newLength=Math.max(1,Math.round(input.length/ratio)),out=new Float32Array(newLength);
+  for(let i=0;i<newLength;i++){const start=Math.floor(i*ratio),end=Math.min(input.length,Math.floor((i+1)*ratio));let sum=0,n=0;for(let j=start;j<Math.max(start+1,end);j++){sum+=input[Math.min(j,input.length-1)];n++}out[i]=sum/(n||1)}
+  return out;
+}
+function queueLivePCM(base64,sampleRate=24000){
   try{
-    let stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    liveAudioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
-    let source = liveAudioCtx.createMediaStreamSource(stream);
-    liveScriptProc = liveAudioCtx.createScriptProcessor(4096, 1, 1);
-    liveScriptProc.onaudioprocess = (e) => {
-      if(!isLiveActive || !geminiLiveWs || geminiLiveWs.readyState !== WebSocket.OPEN) return;
-      let input = e.inputBuffer.getChannelData(0);
-      let buf = new ArrayBuffer(input.length * 2), view = new DataView(buf);
-      for (let i = 0; i < input.length; i++) {
-        let s = Math.max(-1, Math.min(1, input[i]));
-        view.setInt16(i * 2, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
-      }
-      let binary = '', bytes = new Uint8Array(buf);
-      for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
-      geminiLiveWs.send(JSON.stringify({ realtimeInput: { mediaChunks: [{ mimeType: "audio/pcm", data: btoa(binary) }] } }));
-    };
-    source.connect(liveScriptProc);
-    liveScriptProc.connect(liveAudioCtx.destination);
-  }catch(e){}
+    if(!liveAudioCtx||liveAudioCtx.state==='closed')return;
+    const raw=atob(base64),view=new DataView(new ArrayBuffer(raw.length)),samples=new Float32Array(Math.floor(raw.length/2));
+    for(let i=0;i<raw.length;i++)view.setUint8(i,raw.charCodeAt(i));
+    for(let i=0;i<samples.length;i++)samples[i]=view.getInt16(i*2,true)/32768;
+    const buffer=liveAudioCtx.createBuffer(1,samples.length,sampleRate);buffer.copyToChannel(samples,0);
+    const src=liveAudioCtx.createBufferSource();src.buffer=buffer;src.connect(liveAudioCtx.destination);
+    const now=liveAudioCtx.currentTime;if(liveNextPlayAt<now)liveNextPlayAt=now+0.03;
+    src.start(liveNextPlayAt);liveNextPlayAt+=buffer.duration;
+  }catch(err){console.warn('Không phát được audio Gemini Live',err)}
 }
-
-function stopLive(){
-  isLiveActive = false;
-  if(geminiLiveWs) { try{ geminiLiveWs.close(); }catch(e){} geminiLiveWs = null; }
-  if(liveScriptProc) { try{ liveScriptProc.disconnect(); }catch(e){} liveScriptProc = null; }
-  if(liveAudioCtx) { try{ liveAudioCtx.close(); }catch(e){} liveAudioCtx = null; }
-  let btn = $('#btnLive'), status = $('#liveStatus'), dot = $('#liveDot');
-  if(btn) { btn.textContent = "🎙️ Bắt đầu đàm thoại giọng nói Gemini Live"; btn.className = "btn"; }
-  if(status) status.textContent = "Đã ngắt kết nối Gemini Live.";
-  if(dot) dot.classList.remove('active');
+function setLiveStatus(text){
+  const s=$('#liveState'),d=$('#liveIndicator'),b=$('#liveToggle');
+  if(s)s.textContent=text;
+  if(d)d.classList.toggle('on',liveActive);
+  if(b&&!liveActive&&!liveOpening){b.disabled=false;b.textContent='🎙️ Bắt đầu Gemini Live';b.classList.remove('danger')}
 }
-
-function playPCM(base64){
-  try{
-    let bin = atob(base64), bytes = new Uint8Array(bin.length), i16 = new Int16Array(bytes.buffer);
-    for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
-    let f32 = new Float32Array(i16.length);
-    for(let i=0;i<i16.length;i++) f32[i] = i16[i] / 32768.0;
-    let ctx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
-    let buf = ctx.createBuffer(1, f32.length, 24000);
-    buf.getChannelData(0).set(f32);
-    let src = ctx.createBufferSource();
-    src.buffer = buf; src.connect(ctx.destination); src.start(0);
-  }catch(e){}
+function stopGeminiLive(message='Đã ngắt kết nối.'){
+  liveActive=false;liveOpening=false;liveSessionToken++;
+  if(liveWs){const w=liveWs;liveWs=null;try{w.onclose=null;w.onerror=null;w.close()}catch(e){}}
+  if(liveProcessor){try{liveProcessor.disconnect()}catch(e){}liveProcessor=null}
+  if(liveSource){try{liveSource.disconnect()}catch(e){}liveSource=null}
+  if(liveMuteGain){try{liveMuteGain.disconnect()}catch(e){}liveMuteGain=null}
+  if(liveMicStream){liveMicStream.getTracks().forEach(t=>{try{t.stop()}catch(e){}});liveMicStream=null}
+  if(liveAudioCtx){const c=liveAudioCtx;liveAudioCtx=null;try{c.close()}catch(e){}}
+  liveNextPlayAt=0;setLiveStatus(message);
 }
+window.addEventListener('pagehide',()=>{if(liveActive||liveOpening)stopGeminiLive('Đã đóng trang.')});
 
-function speak(t){
-  if(!('speechSynthesis'in window)) return;
-  speechSynthesis.cancel();
-  let u=new SpeechSynthesisUtterance(t);
-  u.lang='zh-CN'; u.rate=.82;
-  speechSynthesis.speak(u);
-}
-
+function bubble(m){let t=m.parts?.map(p=>p.text||'').join('')||'';return `<div class="bubble ${m.role==='user'?'me':'ai'}">${esc(t)}</div>`}
+function startTutor(prompt){chatHistory=[];if(route!=='chat')go('chat');sendToAI(prompt)}
+function clearChat(){chatHistory=[];chat();}
+async function sendText(){let v=$('#chatInput')?.value.trim();if(!v||chatBusy)return;$('#chatInput').value='';addUser(v);await askGemini();}
+function addUser(t){chatHistory.push({role:'user',parts:[{text:t}]});refreshChat()}
+function refreshChat(){let c=$('#chatbox');if(c){c.innerHTML=chatHistory.map(bubble).join('');c.scrollTop=c.scrollHeight}}
+async function sendToAI(t){addUser(t);await askGemini()}
+async function askGemini(audioPart=null, extraPrompt=''){let key=sessionStorage.getItem('zh365_gemini_key');if(!key){setStatus('Chưa có Gemini API key. Mở Cài đặt để kết nối.');return}if(chatBusy)return;chatBusy=true;setStatus('Gia sư đang nghe / suy nghĩ...');try{let contents=chatHistory.slice(-14).map(x=>({role:x.role,parts:x.parts}));if(audioPart){contents[contents.length-1].parts.unshift({inlineData:{mimeType:audioPart.mime,data:audioPart.data}});contents[contents.length-1].parts.push({text:extraPrompt||'Hãy nghe âm thanh tôi vừa gửi, phản hồi như gia sư tiếng Hoa. Nếu là câu trả lời tiếng Hoa, chép lại chữ Hán và pinyin, sửa lỗi phát âm nếu nghe đủ rõ.'})}let res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':key},body:JSON.stringify({systemInstruction:{parts:[{text:'Bạn là gia sư tiếng Phổ thông Trung Quốc (普通话) giàu kinh nghiệm, dạy người Việt. Nói tiếng Việt miền Nam tự nhiên, nhưng mẫu câu tiếng Hoa dùng chuẩn phổ thông đại lục. Dạy có kỷ luật, công tâm, không khen xã giao. Luôn hỏi từng câu rồi chờ người học trả lời; không độc thoại dài. Khi sửa câu, chỉ rõ lỗi, đưa câu chuẩn, pinyin có dấu, nghĩa tiếng Việt và giải thích thanh điệu/ngữ pháp. Tăng độ khó từ từ theo nội dung đã học; không giả định người học đã học bài chưa có trong giáo trình. Trong hội thoại, duy trì nhiều lượt, phản hồi đúng ý người học, đặt câu hỏi nối tiếp tự nhiên. Nếu audio nhiễu/không nghe rõ, nói thẳng là chưa đánh giá được và yêu cầu nói lại. Phân biệt nhận diện lời nói với độ chính xác âm vị; không tuyên bố đo thanh điệu tuyệt đối.'}]},contents,generationConfig:{temperature:0.55,maxOutputTokens:700}})});let j=await res.json();if(!res.ok)throw new Error(j.error?.message||('HTTP '+res.status));let txt=j.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('')||'Gia sư chưa trả lời được. Anh thử lại nghen.';chatHistory.push({role:'model',parts:[{text:txt}]});refreshChat();speakLastChinese();setStatus('Đã trả lời. Anh cứ nói tiếp để hội thoại kéo dài tự nhiên.')}catch(e){setStatus('Lỗi kết nối Gemini: '+e.message)}finally{chatBusy=false}}
+function setStatus(t){let e=$('#chatStatus');if(e)e.textContent=t}
+function speak(t){if(!('speechSynthesis'in window)){alert('Trình duyệt này không hỗ trợ đọc văn bản.');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.82;speechSynthesis.speak(u)}
+function speakLastChinese(){let m=[...chatHistory].reverse().find(x=>x.role==='model');if(!m)return;let t=m.parts.map(p=>p.text||'').join('');let han=(t.match(/[\u3400-\u9fff，。！？、；：“”‘’（）《》]+/g)||[]).join('');if(han)speak(han);else alert('Chưa tìm thấy câu chữ Hán trong phản hồi gần nhất.')}
+async function startRecord(mode,target='',btnId=''){ if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){alert('Thiết bị hoặc trình duyệt không hỗ trợ ghi âm. Hãy dùng Chrome/Edge/Safari mới và cấp quyền microphone.');return}if(!sessionStorage.getItem('zh365_gemini_key')){openSettings('Cần Gemini API key để AI nghe và nhận xét phát âm.');return}try{let stream=await navigator.mediaDevices.getUserMedia({audio:true});let mime=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(x=>MediaRecorder.isTypeSupported(x));recorder=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);recordChunks=[];recordMode=mode;recordTarget=target;recordButtonId=btnId|| (mode==='chat'?'recordChat':'');recorder.ondataavailable=e=>{if(e.data.size)recordChunks.push(e.data)};recorder.onstop=async()=>{stream.getTracks().forEach(t=>t.stop());let blob=new Blob(recordChunks,{type:recorder.mimeType||'audio/webm'});if(blob.size>8*1024*1024){setStatus('File ghi âm quá lớn, vui lòng nói ngắn hơn.');return}let data=await blobToBase64(blob);if(mode==='chat'){addUser('[Người học gửi một câu trả lời bằng giọng nói.]');await askGemini({mime:(blob.type||'audio/webm').split(';')[0],data},'Nghe audio người học. Hãy trả lời trực tiếp như một gia sư đang đối thoại. Chép lại điều nghe được bằng chữ Hán và pinyin, dịch nghĩa, nhận xét phát âm nếu đủ rõ; nếu không rõ thì yêu cầu nói lại. Sau đó đặt đúng một câu hỏi nối tiếp bằng tiếng Hoa và giải nghĩa.')}else{await evaluateAudio(target,{mime:(blob.type||'audio/webm').split(';')[0],data})}};recorder.start();recordStarted=Date.now();let b=document.getElementById(recordButtonId);if(!b&&mode!=='chat'){recordButtonId='recordStop';modal(`<h3>Đang ghi âm câu trả lời</h3><p>Hãy nói xong câu tiếng Hoa rồi bấm Dừng.</p><button class="btn danger" id="recordStop" onclick="stopRecord()">⏹ Dừng ghi âm</button>`);b=document.getElementById(recordButtonId)}if(b){b.textContent='⏹ Dừng ghi âm';b.classList.add('danger');b.onclick=stopRecord}setStatus('Đang ghi âm... bấm Dừng khi nói xong.')}catch(e){alert('Không mở được microphone: '+e.message)}}
+function stopRecord(){if(recorder&&recorder.state==='recording'){recorder.stop();let b=document.getElementById(recordButtonId);if(b){b.textContent=recordMode==='chat'?'🎙️ Nhấn để nói':'🎙️ Nói lại';b.classList.remove('danger');b.onclick=()=>startRecord(recordMode,recordTarget,recordButtonId)}setStatus('Đang xử lý audio...')}}
+function blobToBase64(blob){return new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]);r.onerror=reject;r.readAsDataURL(blob)})}
+async function evaluateAudio(target,audio){let key=sessionStorage.getItem('zh365_gemini_key');modal(`<h3>Đang phân tích phát âm</h3><p>AI đang nghe câu mục tiêu: <b>${esc(target)}</b>. Vui lòng chờ...</p>`);try{let body={contents:[{role:'user',parts:[{inlineData:{mimeType:audio.mime,data:audio.data}},{text:`Bạn là chuyên gia ngữ âm tiếng Phổ thông. Câu mục tiêu là: ${target}. Hãy nghe audio thật kỹ. Trả lời bằng tiếng Việt với cấu trúc: (1) Bạn nghe được gì (chữ Hán và pinyin); (2) Có đúng câu mục tiêu không; (3) nhận xét âm đầu, vận mẫu, thanh điệu, nhịp/ngữ điệu; (4) điểm 0-100 chỉ khi audio đủ rõ, nếu không đủ rõ ghi KHÔNG ĐỦ DỮ LIỆU; (5) 1-2 bài tập sửa lỗi cụ thể. Không tự suy diễn âm thanh không nghe được, không cho điểm cao để động viên. Nhấn mạnh đây là đánh giá AI tham khảo, không phải phép đo ngữ âm chuẩn phòng lab.`}]}],generationConfig:{temperature:.2,maxOutputTokens:600}};let r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':key},body:JSON.stringify(body)});let j=await r.json();if(!r.ok)throw new Error(j.error?.message||'API error');let t=j.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('')||'Không có kết quả.';modal(`<h3>Kết quả nhận xét phát âm</h3><div class="note">Mục tiêu: ${esc(target)}</div><div style="white-space:pre-wrap;line-height:1.65">${esc(t)}</div><p class="small muted">Đánh giá bằng mô hình AI, phụ thuộc chất lượng micro, nhiễu nền và cách phân tích của mô hình; không thay thế giám định ngữ âm chuyên dụng.</p><div class="row"><button class="btn secondary" onclick="closeModal()">Đóng</button><button class="btn" onclick="closeModal();startRecord('pronounce','${esc(target)}')">Luyện lại câu này</button></div>`)}catch(e){modal(`<h3>Không phân tích được audio</h3><p>${esc(e.message)}</p><button class="btn" onclick="closeModal()">Đóng</button>`)} }
+function exam(){let completed=state.completed.length;let upto=state.completed.slice(-5).map(d=>DB.lessons[d-1]).filter(Boolean);$('#app').innerHTML=`<div class="sectionhead"><div><h2>Bài kiểm tra 3 kỹ năng</h2><div class="muted">Mốc kiểm tra sau mỗi 5 buổi hoàn thành</div></div><button class="btn secondary" onclick="go('home')">← Trang chủ</button></div><div class="card"><div class="note">Bài kiểm tra sẽ lấy từ vựng, mẫu câu và ngữ pháp của 5 buổi gần nhất. Gia sư hỏi từng câu, không đưa đáp án trước; phần nghe dùng câu tiếng Hoa đọc thành tiếng, phần đọc dùng câu/chữ Hán, phần nói yêu cầu anh trả lời bằng giọng nói. Cuối bài AI tổng kết điểm mạnh, điểm yếu và kế hoạch ôn.</div><h3>Phạm vi kiểm tra</h3>${upto.length?upto.map(l=>`<div class="resource"><b>Ngày ${l.day}: ${esc(l.title)}</b></div>`).join(''):'<p>Chưa có buổi học hoàn thành.</p>'}<p class="muted">Số buổi đã hoàn thành: ${completed}. ${completed>=5?'Đã đủ điều kiện kiểm tra.':'Cần hoàn thành ít nhất 5 buổi để có dữ liệu ôn.'}</p><button class="btn" ${completed<5?'disabled':''} onclick="go('chat');startTutor('BẮT ĐẦU BÀI KIỂM TRA ĐỊNH KỲ 3 KỸ NĂNG cho người học. Phạm vi là 5 buổi gần nhất đã hoàn thành: ${upto.map(l=>'Ngày '+l.day+' '+l.title).join('; ')}. Tổ chức 9 câu, lần lượt 3 câu nghe, 3 câu đọc, 3 câu nói. Mỗi lần chỉ hỏi MỘT câu, không tiết lộ đáp án trước. Phần nghe: đọc một câu tiếng Hoa tự nhiên bằng chữ, yêu cầu người học nghe bằng nút đọc mẫu rồi trả lời nghĩa/nội dung. Phần đọc: đưa câu/chữ Hán và hỏi hiểu nghĩa/ngữ pháp. Phần nói: yêu cầu người học trả lời bằng tiếng Hoa, có thể dùng ghi âm. Chấm từng câu nghiêm túc, ghi lỗi cụ thể. Không tự cho điểm phần nói nếu chưa nghe audio. Sau câu 9, tổng kết thang 100: nghe 30, đọc 30, nói 40; nêu rõ căn cứ, điểm mạnh, điểm yếu và bài cần ôn trước buổi kế tiếp. Nếu người học yêu cầu dừng giữa chừng, tổng kết phần đã làm và ghi rõ bài chưa hoàn tất.')">Bắt đầu bài kiểm tra với gia sư AI</button></div>`}
+function modal(t){$('#modalbox').innerHTML=t;$('#modal').classList.remove('hide')}function closeModal(){$('#modal').classList.add('hide')}
+function openSettings(message=''){modal(`<h2>Cài đặt gia sư Gemini</h2>${message?`<div class="note">${esc(message)}</div>`:''}<p>Nhập Gemini API key của chính anh. Key chỉ lưu trong phiên trình duyệt hiện tại (sessionStorage), không được ghi vào file app hay gửi tới Netlify. Khi đóng tab, key sẽ bị xóa.</p><label><b>Gemini API key</b></label><input id="gemKey" class="input" type="password" autocomplete="off" placeholder="Dán API key tại đây" style="width:100%;margin:8px 0"><p class="small muted">Tạo key tại Google AI Studio. API có thể có giới hạn hoặc chi phí tùy tài khoản, model và chính sách Google. Không chia sẻ key hoặc đăng app kèm key cá nhân.</p><div class="row"><button class="btn" onclick="saveKey()">Lưu trong phiên này</button><button class="btn secondary" onclick="testKey()">Kiểm tra kết nối</button><button class="btn ghost" onclick="closeModal()">Đóng</button></div><p class="small"><a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Google AI Studio – tạo API key ↗</a></p>`)}
+function saveKey(){let k=$('#gemKey').value.trim();if(!k){alert('Anh chưa nhập API key.');return}sessionStorage.setItem('zh365_gemini_key',k);closeModal();setStatus('Đã lưu key trong phiên hiện tại.')}
+async function testKey(){let k=$('#gemKey').value.trim();if(!k){alert('Nhập API key trước nghen.');return}try{let r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':k},body:JSON.stringify({contents:[{parts:[{text:'Reply only: Kết nối thành công.'}]}]})});let j=await r.json();if(!r.ok)throw new Error(j.error?.message||'Lỗi API');sessionStorage.setItem('zh365_gemini_key',k);alert('Kết nối thành công với Gemini.');}catch(e){alert('Chưa kết nối được: '+e.message)}}
 init();
-</script>
-</body>
-</html>
+</script></body></html>
