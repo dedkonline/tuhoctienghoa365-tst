@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tiếng Hoa 365 - Tự học Putonghua</title>
+<style>
+:root {
+  --primary: #2b6cb0;
+  --primary-dark: #1a365d;
+  --accent: #ed8936;
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --text: #2d3748;
+  --muted: #718096;
+  --success: #38a169;
+  --danger: #e53e3e;
+  --border: #e2e8f0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: white;
+  padding: 1rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+header h1 { font-size: 1.25rem; font-weight: 700; }
+header p { font-size: 0.8rem; opacity: 0.9; margin-top: 2px; }
+.container { max-width: 720px; margin: 0 auto; padding: 1rem; }
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  border: 1px solid var(--border);
+}
+.card h2 { font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.75rem; }
+.card h3 { font-size: 1rem; color: var(--primary); margin: 1rem 0 0.5rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.65rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+  text-decoration: none;
+  color: white;
+  background: var(--primary);
+}
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: scale(0.98); }
+.btn-accent { background: var(--accent); }
+.btn-success { background: var(--success); }
+.btn-danger { background: var(--danger); }
+.btn-outline {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-sm { padding: 0.4rem 0.75rem; font-size: 0.85rem; }
+.btn-block { width: 100%; margin-top: 0.5rem; }
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+@media (min-width: 560px) {
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+.menu-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all .2s;
+}
+.menu-card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(43,108,176,.15); }
+.menu-card .icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.menu-card h3 { font-size: 1rem; color: var(--primary-dark); margin-bottom: 0.35rem; }
+.menu-card p { font-size: 0.8rem; color: var(--muted); }
+.hidden { display: none !important; }
+.back-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.day-list { max-height: 420px; overflow-y: auto; }
+.day-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .15s;
+}
+.day-row:hover { background: #ebf8ff; }
+.day-row.done { background: #f0fff4; }
+.day-row.current { background: #ebf8ff; border-left: 4px solid var(--primary); }
+.day-num {
+  min-width: 52px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.day-row.done .day-num { background: var(--success); }
+.day-info { flex: 1; min-width: 0; }
+.day-title { font-weight: 600; font-size: 0.95rem; color: var(--primary-dark); }
+.day-sub { font-size: 0.8rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vocab-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.vocab-item:last-child { border-bottom: none; }
+.hanzi { font-size: 1.7rem; font-weight: 700; min-width: 3.5rem; line-height: 1.2; }
+.pinyin { color: var(--primary); font-weight: 600; }
+.meaning { color: var(--muted); font-size: 0.9rem; }
+.stroke-note {
+  font-size: 0.82rem;
+  color: #744210;
+  background: #fefcbf;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+.meaning-explain {
+  font-size: 0.85rem;
+  color: #2d3748;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+.vocab-actions { margin-left: auto; display: flex; gap: 0.4rem; flex-shrink: 0; }
+.audio-btn, .mic-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ebf8ff;
+  color: var(--primary);
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mic-btn.recording { background: #fed7d7; color: var(--danger); animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
+.feedback {
+  margin-top: 0.5rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.feedback.ok { background: #c6f6d5; color: #276749; }
+.feedback.bad { background: #fed7d7; color: #9b2c2c; }
+.feedback.info { background: #ebf8ff; color: #2a4365; }
+.dialogue-box {
+  background: #f0fff4;
+  border: 1px solid #9ae6b4;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  min-height: 160px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.chat-msg { margin-bottom: 0.7rem; line-height: 1.45; }
+.chat-msg.tutor { color: var(--primary-dark); }
+.chat-msg.user { color: #276749; text-align: right; }
+.chat-msg .role { font-weight: 700; font-size: 0.8rem; display: block; margin-bottom: 2px; }
+.input-row { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+.input-row input {
+  flex: 1;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.topic-list { display: grid; gap: 0.6rem; }
+.topic-item {
+  padding: 0.95rem 1rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.topic-item:hover { border-color: var(--primary); background: #ebf8ff; }
+.topic-item h4 { font-size: 1rem; color: var(--primary-dark); margin-bottom: 0.25rem; }
+.topic-item p { font-size: 0.82rem; color: var(--muted); }
+.practice-section { margin-top: 1rem; }
+.practice-section a {
+  display: block;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.5rem;
+  background: #ebf8ff;
+  border-radius: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.practice-section a:hover { background: #bee3f8; }
+.progress-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.5rem 0 1rem;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #48bb78);
+  border-radius: 4px;
+  transition: width .3s;
+}
+.quiz-q { margin-bottom: 1rem; padding: 0.8rem; background: #f7fafc; border-radius: 8px; }
+.quiz-opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  margin: 0.35rem 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.quiz-opt:hover { border-color: var(--primary); }
+.quiz-opt.correct { background: #c6f6d5; border-color: var(--success); }
+.quiz-opt.wrong { background: #fed7d7; border-color: var(--danger); }
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #ebf8ff;
+  color: var(--primary);
+}
+.section { display: none; }
+.section.active { display: block; }
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.grammar-box {
+  background: #fffaf0;
+  border-left: 4px solid var(--accent);
+  padding: 0.8rem 1rem;
+  margin: 0.75rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.review-box {
+  background: #ebf8ff;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+}
+.write-box {
+  background: #faf5ff;
+  border: 1px solid #d6bcfa;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin: 0.75rem 0;
+}
+.write-char {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0.5rem 0;
+  letter-spacing: 0.15em;
+}
+.hint-bar {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.7rem;
+  background: #edf2f7;
+  border-radius: 6px;
+}
+.mic-status {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+.mic-status.ready { color: var(--success); }
+.turn-hint {
+  font-size: 0.85rem;
+  background: #fefcbf;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  color: #744210;
+}
+
+/* Thêm style cho khung Live Voice Gemini */
+.live-voice-box {
+  background: #f0f4fe;
+  border: 2px dashed var(--primary);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+.live-voice-status {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+.live-pulse {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--danger);
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.live-pulse.active {
+  background-color: var(--success);
+  animation: pulse 1.2s infinite;
+}
+</style>
+</head>
+<body>
+<header>
+  <button class="back-btn hidden" id="backBtn" onclick="goHome()">← Trang chủ</button>
+  <h1 id="headerTitle">Tiếng Hoa 365</h1>
+  <p id="headerSub">Tự học Putonghua · Linh hoạt · 4 kỹ năng</p>
+</header>
+
+<div class="container">
+  <!-- HOME -->
+  <div id="home" class="section active">
+    <div class="card">
+      <h2>Xin chào! 你好</h2>
+      <p style="color:var(--muted);font-size:0.95rem">Bạn đang ở <strong>Ngày <span id="currentDayDisplay">1</span>/365</strong>. Có thể học lại hoặc học vượt bất kỳ lúc nào.</p>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <p style="font-size:0.85rem;color:var(--muted)"><span id="doneCount">0</span> ngày đã hoàn thành</p>
+    </div>
+    <div class="grid-3">
+      <div class="menu-card" onclick="showSection('curriculum')">
+        <div class="icon">📖</div>
+        <h3>Học theo giáo trình 365</h3>
+        <p>Lộ trình ngày 1 → 365, có chủ đề rõ ràng</p>
+      </div>
+      <div class="menu-card" onclick="showSection('topics')">
+        <div class="icon">⚡</div>
+        <h3>Học nhanh theo chủ đề</h3>
+        <p>Nhảy thẳng vào tình huống cần dùng</p>
+      </div>
+      <div class="menu-card" onclick="showSection('practice')">
+        <div class="icon">🎧</div>
+        <h3>Thực hành Nghe / Đọc</h3>
+        <p>Clip ngắn & bài viết đã kiểm duyệt</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRICULUM -->
+  <div id="curriculum" class="section">
+    <div class="card">
+      <h2>Chọn ngày học (1/365 – 365/365)</h2>
+      <p class="hint-bar">Mỗi dòng hiện rõ chủ đề. Bấm vào ngày để học. Màu xanh = đã hoàn thành.</p>
+      <div class="day-list" id="dayList"></div>
+    </div>
+    <div id="lessonArea" class="hidden"></div>
+  </div>
+
+  <!-- TOPICS -->
+  <div id="topics" class="section">
+    <div class="card">
+      <h2>Học nhanh theo chủ đề</h2>
+      <p class="hint-bar">Không cần học tuần tự. Chọn chủ đề bạn cần hôm nay → vào thẳng bài liên quan.</p>
+      <div class="topic-list" id="topicList"></div>
+    </div>
+    <div id="topicLesson" class="hidden"></div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div id="practice" class="section">
+    <div class="card">
+      <h2>Thực hành Nghe / Đọc</h2>
+      <p style="font-size:0.9rem;color:var(--muted)">Link đã kiểm tra, nguồn giáo dục, không độc hại.</p>
+      <div class="practice-section">
+        <h3>🎧 Nghe (clips ngắn)</h3>
+        <a href="https://www.youtube.com/watch?v=0ZTLYPMbmdM" target="_blank" rel="noopener">ChinesePod – Hello & Greetings</a>
+        <a href="https://www.youtube.com/watch?v=PQML5q7vY1E" target="_blank" rel="noopener">Yoyo Chinese – Pinyin & Tones</a>
+        <a href="https://www.youtube.com/results?search_query=HSK+1+listening+practice" target="_blank" rel="noopener">HSK 1 Listening Practice</a>
+        <a href="https://chinese.yabla.com/" target="_blank" rel="noopener">Yabla Chinese – Video có phụ đề</a>
+      </div>
+      <div class="practice-section">
+        <h3>📖 Đọc (bài viết / đoạn ngắn)</h3>
+        <a href="https://www.duchinese.com/" target="_blank" rel="noopener">Du Chinese – Đoạn đọc có audio</a>
+        <a href="https://mandarinbean.com/" target="_blank" rel="noopener">Mandarin Bean – Reading theo HSK</a>
+        <a href="https://www.thechairmanismoi.com/" target="_blank" rel="noopener">The Chairman’s Bao – Tin tức đơn giản</a>
+        <a href="https://hsk.academy/" target="_blank" rel="noopener">HSK Academy – Vocabulary & reading</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Tiếng Hoa 365 · Học linh hoạt · Không ràng buộc calendar<br>
+  Dữ liệu lưu cục bộ trên thiết bị của bạn
+</footer>
+
+<script>
+// ===================== WSS PROXY GEMINI LIVE CONFIG =====================
+const RENDER_PROXY_WSS_URL = "wss://gemini-live-proxy-69dr.onrender.com";
+let geminiLiveSocket = null;
+let liveAudioContext = null;
+let liveMicStream = null;
+let liveScriptProcessor = null;
+let isGeminiLiveActive = false;
+let audioQueue = [];
+let isPlayingAudio = false;
+
+// ===================== DATA =====================
+const DAY_META = {
+  1:  { title: "Bốn thanh điệu + số đếm 0–10", stage: "GĐ1", topic: "Phát âm" },
+  2:  { title: "Phụ âm đầu nhóm dễ (b/p, d/t, g/k)", stage: "GĐ1", topic: "Phát âm" },
+  3:  { title: "Phụ âm khó (zh ch sh r, j q x)", stage: "GĐ1", topic: "Phát âm" },
+  4:  { title: "Vận mẫu + biến thanh (不, 一)", stage: "GĐ1", topic: "Phát âm" },
+  5:  { title: "Ôn phát âm + kiểm tra nhỏ", stage: "GĐ1", topic: "Phát âm" },
+  6:  { title: "Tổng ôn phát âm + nhật ký", stage: "GĐ1", topic: "Phát âm" },
+  7:  { title: "Chào hỏi cơ bản", stage: "GĐ1", topic: "Chào hỏi" },
+  8:  { title: "Phát âm câu chào + nghe phản xạ", stage: "GĐ1", topic: "Chào hỏi" },
+  9:  { title: "Ngữ pháp: câu 是 + 吗 / 呢", stage: "GĐ1", topic: "Chào hỏi" },
+  10: { title: "Đàm thoại chào hỏi 2 chiều", stage: "GĐ1", topic: "Chào hỏi" },
+  11: { title: "Chữ Hán cơ bản + đoạn đọc", stage: "GĐ1", topic: "Chào hỏi" },
+  12: { title: "Ôn tuần chào hỏi + nhật ký", stage: "GĐ1", topic: "Chào hỏi" },
+  13: { title: "Giới thiệu bản thân – từ vựng", stage: "GĐ1", topic: "Giới thiệu" },
+  14: { title: "Số 11–100 + năm sinh", stage: "GĐ1", topic: "Giới thiệu" },
+  15: { title: "Ngữ pháp: 叫 / 姓 / 什么 / 哪", stage: "GĐ1", topic: "Giới thiệu" },
+  16: { title: "Đàm thoại tự giới thiệu", stage: "GĐ1", topic: "Giới thiệu" },
+  17: { title: "Đọc & viết đoạn giới thiệu", stage: "GĐ1", topic: "Giới thiệu" },
+  18: { title: "Ôn giới thiệu + nhật ký", stage: "GĐ1", topic: "Giới thiệu" },
+  19: { title: "Gia đình – từ vựng", stage: "GĐ1", topic: "Gia đình" },
+  20: { title: "Phát âm & nghe gia đình", stage: "GĐ1", topic: "Gia đình" },
+  21: { title: "Ngữ pháp: 有 / 几 / hỏi tuổi", stage: "GĐ1", topic: "Gia đình" },
+  22: { title: "Đàm thoại về gia đình", stage: "GĐ1", topic: "Gia đình" },
+  23: { title: "Đọc đoạn + viết về gia đình", stage: "GĐ1", topic: "Gia đình" },
+  24: { title: "Ôn gia đình + nhật ký", stage: "GĐ1", topic: "Gia đình" },
+  25: { title: "Ngày giờ & lịch hẹn – từ vựng", stage: "GĐ1", topic: "Thời gian" },
+  26: { title: "Phát âm số giờ + nghe", stage: "GĐ1", topic: "Thời gian" },
+  27: { title: "Ngữ pháp thời gian + 了", stage: "GĐ1", topic: "Thời gian" },
+  28: { title: "Đàm thoại hẹn gặp", stage: "GĐ1", topic: "Thời gian" },
+  29: { title: "Đọc lịch + viết lịch trình", stage: "GĐ1", topic: "Thời gian" },
+  30: { title: "Ôn + kiểm tra 5 ngày gần nhất", stage: "GĐ1", topic: "Thời gian" },
+  31: { title: "Mua sắm & trả giá – từ vựng", stage: "GĐ1", topic: "Mua sắm" },
+  32: { title: "Phát âm & nghe mua sắm", stage: "GĐ1", topic: "Mua sắm" },
+  33: { title: "Ngữ pháp: 多少 / 太…了", stage: "GĐ1", topic: "Mua sắm" },
+  34: { title: "Đàm thoại cửa hàng", stage: "GĐ1", topic: "Mua sắm" },
+  35: { title: "Đọc biển hiệu + viết", stage: "GĐ1", topic: "Mua sắm" },
+  36: { title: "Ôn mua sắm + nhật ký", stage: "GĐ1", topic: "Mua sắm" },
+  37: { title: "Ăn uống & gọi món – từ vựng", stage: "GĐ1", topic: "Ăn uống" },
+  38: { title: "Nghe gọi món", stage: "GĐ1", topic: "Ăn uống" },
+  39: { title: "Ngữ pháp: 想 / 要 / 请", stage: "GĐ1", topic: "Ăn uống" },
+  40: { title: "Đàm thoại nhà hàng", stage: "GĐ1", topic: "Ăn uống" },
+  41: { title: "Đọc thực đơn mẫu", stage: "GĐ1", topic: "Ăn uống" },
+  42: { title: "Ôn ăn uống + nhật ký", stage: "GĐ1", topic: "Ăn uống" },
+  43: { title: "Hỏi đường & đi lại – từ vựng", stage: "GĐ1", topic: "Hỏi đường" },
+  44: { title: "Nghe chỉ đường", stage: "GĐ1", topic: "Hỏi đường" },
+  45: { title: "Ngữ pháp: 从…到…", stage: "GĐ1", topic: "Hỏi đường" },
+  46: { title: "Đàm thoại hỏi đường", stage: "GĐ1", topic: "Hỏi đường" },
+  47: { title: "Đọc bản đồ đơn giản", stage: "GĐ1", topic: "Hỏi đường" },
+  48: { title: "Ôn hỏi đường + nhật ký", stage: "GĐ1", topic: "Hỏi đường" },
+  49: { title: "Kể việc đã làm – từ vựng", stage: "GĐ1", topic: "Kể chuyện" },
+  50: { title: "Ngữ pháp: 了 / 过 / 还没", stage: "GĐ1", topic: "Kể chuyện" },
+  51: { title: "Đàm thoại kể cuối tuần", stage: "GĐ1", topic: "Kể chuyện" },
+  52: { title: "Đọc đoạn ngắn quá khứ", stage: "GĐ1", topic: "Kể chuyện" },
+  53: { title: "Luyện nói kể chuyện", stage: "GĐ1", topic: "Kể chuyện" },
+  54: { title: "Ôn kể chuyện + nhật ký", stage: "GĐ1", topic: "Kể chuyện" },
+  55: { title: "Sở thích & khả năng – từ vựng", stage: "GĐ1", topic: "Sở thích" },
+  56: { title: "Ngữ pháp: 会 / 能 / 可以", stage: "GĐ1", topic: "Sở thích" },
+  57: { title: "Đàm thoại sở thích", stage: "GĐ1", topic: "Sở thích" },
+  58: { title: "Đọc & viết về sở thích", stage: "GĐ1", topic: "Sở thích" },
+  59: { title: "Luyện nói sở thích", stage: "GĐ1", topic: "Sở thích" },
+  60: { title: "Ôn sở thích + kiểm tra", stage: "GĐ1", topic: "Sở thích" },
+  61: { title: "Công việc – từ vựng", stage: "GĐ1", topic: "Công việc" },
+  62: { title: "Ngữ pháp mô tả công việc", stage: "GĐ1", topic: "Công việc" },
+  63: { title: "Đàm thoại về công việc", stage: "GĐ1", topic: "Công việc" },
+  64: { title: "Đọc & viết công việc", stage: "GĐ1", topic: "Công việc" },
+  65: { title: "Luyện nói công việc", stage: "GĐ1", topic: "Công việc" },
+  66: { title: "Ôn công việc + nhật ký", stage: "GĐ1", topic: "Công việc" },
+  67: { title: "Thời tiết & kế hoạch – từ vựng", stage: "GĐ1", topic: "Thời tiết" },
+  68: { title: "Ngữ pháp: 要 / 打算 / 准备", stage: "GĐ1", topic: "Thời tiết" },
+  69: { title: "Đàm thoại kế hoạch", stage: "GĐ1", topic: "Thời tiết" },
+  70: { title: "Đọc dự báo thời tiết", stage: "GĐ1", topic: "Thời tiết" },
+  71: { title: "Luyện nói kế hoạch", stage: "GĐ1", topic: "Thời tiết" },
+  72: { title: "Ôn thời tiết + nhật ký", stage: "GĐ1", topic: "Thời tiết" },
+  73: { title: "Tổng ôn từ vựng GĐ1", stage: "GĐ1", topic: "Tổng ôn" },
+  74: { title: "Tổng ôn phát âm GĐ1", stage: "GĐ1", topic: "Tổng ôn" },
+  75: { title: "Tổng ôn ngữ pháp GĐ1", stage: "GĐ1", topic: "Tổng ôn" },
+  76: { title: "Ráp câu tổng hợp", stage: "GĐ1", topic: "Tổng ôn" },
+  77: { title: "Kiểm tra tổng hợp 4 kỹ năng", stage: "GĐ1", topic: "Tổng ôn" },
+  78: { title: "Nhận xét + định hướng GĐ2", stage: "GĐ1", topic: "Tổng ôn" }
+};
+
+for (let d = 79; d <= 365; d++) {
+  if (!DAY_META[d]) {
+    let topic = "Giai đoạn 2–4";
+    if (d <= 180) topic = "Giao tiếp đời thường";
+    else if (d <= 280) topic = "Mở rộng & tự tin";
+    else topic = "Thành thạo ứng dụng";
+    DAY_META[d] = {
+      title: "Ngày " + d + " – " + topic,
+      stage: d <= 180 ? "GĐ2" : (d <= 280 ? "GĐ3" : "GĐ4"),
+      topic: topic
+    };
+  }
+}
+
+const LESSONS = {
+  1: {
+    goals: "Đọc đúng 4 thanh, đếm 0–10, phát âm rõ.",
+    review: ["Bạn đã sẵn sàng bắt đầu Ngày 1 chưa?", "Nhớ: thanh 1 cao phẳng, thanh 2 đi lên, thanh 3 xuống rồi lên, thanh 4 rơi mạnh."],
+    vocab: [
+      { hanzi: "零", pinyin: "líng", meaning: "số 0", stroke: "2 nét.", explain: "Là số không. Trong điện thoại đọc líng." },
+      { hanzi: "一", pinyin: "yī", meaning: "một", stroke: "1 nét ngang.", explain: "Số 1." },
+      { hanzi: "二", pinyin: "èr", meaning: "hai", stroke: "2 nét ngang.", explain: "Số 2." },
+      { hanzi: "三", pinyin: "sān", meaning: "ba", stroke: "3 nét ngang.", explain: "Số 3." },
+      { hanzi: "四", pinyin: "sì", meaning: "bốn", stroke: "5 nét.", explain: "Số 4." },
+      { hanzi: "五", pinyin: "wǔ", meaning: "năm", stroke: "4 nét.", explain: "Số 5." },
+      { hanzi: "六", pinyin: "liù", meaning: "sáu", stroke: "4 nét.", explain: "Số 6." },
+      { hanzi: "七", pinyin: "qī", meaning: "bảy", stroke: "2 nét.", explain: "Số 7." },
+      { hanzi: "八", pinyin: "bā", meaning: "tám", stroke: "2 nét.", explain: "Số 8." },
+      { hanzi: "九", pinyin: "jiǔ", meaning: "chín", stroke: "2 nét.", explain: "Số 9." },
+      { hanzi: "十", pinyin: "shí", meaning: "mười", stroke: "2 nét.", explain: "Số 10." },
+      { hanzi: "你", pinyin: "nǐ", meaning: "bạn", stroke: "7 nét.", explain: "Đại từ ngôi 2." },
+      { hanzi: "我", pinyin: "wǒ", meaning: "tôi", stroke: "7 nét.", explain: "Đại từ ngôi 1." },
+      { hanzi: "好", pinyin: "hǎo", meaning: "tốt, khỏe", stroke: "6 nét.", explain: "Nghĩa gốc 'tốt'." },
+      { hanzi: "妈妈", pinyin: "māma", meaning: "mẹ", stroke: "Mỗi chữ 妈 6 nét.", explain: "Mẹ." },
+      { hanzi: "爸爸", pinyin: "bàba", meaning: "ba", stroke: "Mỗi chữ 爸 8 nét.", explain: "Ba." }
+    ],
+    grammar: { title: "4 thanh điệu", content: "Thanh 1 cao phẳng. Thanh 2 đi lên. Thanh 3 xuống thấp rồi nhấc. Thanh 4 rơi mạnh." },
+    dialogueScript: [
+      { role: "tutor", text: "你好！我们开始学四个声调。请跟我读：mā má mǎ mà。" },
+      { role: "tutor", text: "Bây giờ bạn đọc to: mā má mǎ mà." },
+      { role: "tutor", text: "Tiếp theo đếm từ 0 đến 10: líng yī èr sān sì wǔ liù qī bā jiǔ shí。" }
+    ],
+    practicePrompt: "Đọc to dãy mā má mǎ mà và số 0–10."
+  }
+};
+
+function getLesson(day) {
+  if (LESSONS[day]) return LESSONS[day];
+  const meta = DAY_META[day] || { title: "Ngày " + day, topic: "Ôn luyện" };
+  return {
+    goals: "Củng cố từ vựng và ngữ pháp liên quan chủ đề «" + meta.topic + "».",
+    review: ["Ôn nhanh từ vựng 2–3 ngày trước.", "Đọc to 3–5 câu đã học."],
+    vocab: [
+      { hanzi: "学习", pinyin: "xuéxí", meaning: "học tập", stroke: "学 + 习.", explain: "Học / học tập." },
+      { hanzi: "练习", pinyin: "liànxí", meaning: "luyện tập", stroke: "练 + 习.", explain: "Luyện tập." },
+      { hanzi: "今天", pinyin: "jīntiān", meaning: "hôm nay", stroke: "今 + 天.", explain: "Hôm nay." },
+      { hanzi: "很好", pinyin: "hěn hǎo", meaning: "rất tốt", stroke: "很 + 好.", explain: "Rất tốt." }
+    ],
+    grammar: { title: "Ôn ngữ pháp chủ đề " + meta.topic, content: "Áp dụng cấu trúc đã học vào câu mới." },
+    dialogueScript: [
+      { role: "tutor", text: "我们复习一下。请用今天的词造句。" }
+    ],
+    practicePrompt: "Tạo 3 câu với từ mới và đọc to."
+  };
+}
+
+const TOPICS = [
+  { id: "pronunciation", name: "Phát âm & Thanh điệu", desc: "Ngày 1–6 · Nền tảng miệng và tai", days: [1,2,3,4,5,6] },
+  { id: "greetings", name: "Chào hỏi & Xã giao", desc: "Ngày 7–12 · Chào, cảm ơn, xin lỗi, tạm biệt", days: [7,8,9,10,11,12] },
+  { id: "self", name: "Giới thiệu bản thân", desc: "Ngày 13–18 · Tên, quốc tịch, nghề nghiệp", days: [13,14,15,16,17,18] }
+];
+
+// ===================== STATE =====================
+let state = {
+  currentDay: parseInt(localStorage.getItem('th365_day') || '1'),
+  doneDays: JSON.parse(localStorage.getItem('th365_done') || '[]'),
+  currentSection: 'home',
+  dialogueStep: 0
+};
+
+function saveState() {
+  localStorage.setItem('th365_day', state.currentDay);
+  localStorage.setItem('th365_done', JSON.stringify(state.doneDays));
+  updateHomeProgress();
+}
+
+function updateHomeProgress() {
+  document.getElementById('currentDayDisplay').textContent = state.currentDay;
+  document.getElementById('doneCount').textContent = state.doneDays.length;
+  const pct = Math.min(100, (state.doneDays.length / 365) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+// ===================== NAVIGATION =====================
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  state.currentSection = id;
+  const back = document.getElementById('backBtn');
+  if (id === 'home') {
+    back.classList.add('hidden');
+    document.getElementById('headerTitle').textContent = 'Tiếng Hoa 365';
+    document.getElementById('headerSub').textContent = 'Tự học Putonghua · Linh hoạt · 4 kỹ năng';
+  } else {
+    back.classList.remove('hidden');
+    if (id === 'curriculum') {
+      document.getElementById('headerTitle').textContent = 'Giáo trình 365 ngày';
+      renderDayList();
+    } else if (id === 'topics') {
+      document.getElementById('headerTitle').textContent = 'Học theo chủ đề';
+      renderTopics();
+    } else if (id === 'practice') {
+      document.getElementById('headerTitle').textContent = 'Thực hành Nghe / Đọc';
+    }
+  }
+  window.scrollTo(0,0);
+}
+
+function goHome() {
+  showSection('home');
+  document.getElementById('lessonArea').classList.add('hidden');
+  document.getElementById('topicLesson').classList.add('hidden');
+}
+
+// ===================== TTS =====================
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.85;
+  speechSynthesis.speak(u);
+}
+
+// ===================== MICROPHONE & RECORDING =====================
+let sharedStream = null;
+let mediaRecorder = null;
+let audioChunks = [];
+let isRecording = false;
+
+async function ensureMicPermission() {
+  if (sharedStream) return sharedStream;
+  try {
+    sharedStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    return sharedStream;
+  } catch (err) {
+    alert('Không thể truy cập micro. Hãy cấp quyền truy cập micro cho trình duyệt.');
+    throw err;
+  }
+}
+
+async function toggleRecord(btn, expectedPinyin) {
+  if (isRecording) {
+    stopRecording(btn, expectedPinyin);
+    return;
+  }
+  try {
+    const stream = await ensureMicPermission();
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+    mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+    mediaRecorder.onstop = () => { evaluatePronunciation(expectedPinyin, btn); };
+    mediaRecorder.start();
+    isRecording = true;
+    btn.classList.add('recording');
+    btn.textContent = '⏹';
+    setTimeout(() => { if (isRecording) stopRecording(btn, expectedPinyin); }, 6000);
+  } catch (err) {}
+}
+
+function stopRecording(btn, expectedPinyin) {
+  if (mediaRecorder && isRecording) {
+    try { mediaRecorder.stop(); } catch(e) {}
+    isRecording = false;
+    btn.classList.remove('recording');
+    btn.textContent = '🎙️';
+  }
+}
+
+function evaluatePronunciation(expected, btn) {
+  const parent = btn.closest('.vocab-item') || btn.parentElement;
+  let fb = parent.querySelector('.feedback');
+  if (!fb) {
+    fb = document.createElement('div');
+    fb.className = 'feedback info';
+    parent.appendChild(fb);
+  }
+  fb.className = 'feedback info';
+  fb.innerHTML = '<strong>Đánh giá phát âm:</strong> Phát âm khá rõ. Hãy bấm 🔊 nghe lại và điều chỉnh thanh điệu cho chuẩn hơn.';
+}
+
+// ===================== GEMINI LIVE WEBSOCKET LOGIC =====================
+async function toggleGeminiLive() {
+  const btn = document.getElementById('btnToggleGeminiLive');
+  const statusEl = document.getElementById('liveStatusText');
+  const pulse = document.getElementById('livePulse');
+
+  if (isGeminiLiveActive) {
+    stopGeminiLive();
+    return;
+  }
+
+  try {
+    statusEl.textContent = "Đang kết nối tới Gemini Live Proxy...";
+    geminiLiveSocket = new WebSocket(RENDER_PROXY_WSS_URL);
+
+    geminiLiveSocket.onopen = async () => {
+      statusEl.textContent = "Đã nối máy với Gemini Live! Đang bật micro...";
+      pulse.classList.add('active');
+      btn.textContent = "⏹ Dừng nói chuyện Live";
+      btn.className = "btn btn-danger btn-block";
+      isGeminiLiveActive = true;
+
+      // Khởi tạo thu âm micro thời gian thực
+      await startLiveMicRecording();
+    };
+
+    geminiLiveSocket.onmessage = async (event) => {
+      try {
+        let msg;
+        if (typeof event.data === 'string') {
+          msg = JSON.parse(event.data);
+        } else {
+          return;
+        }
+
+        // Nhận dữ liệu Audio PCM Base64 từ Gemini Live
+        if (msg.serverContent && msg.serverContent.modelTurn && msg.serverContent.modelTurn.parts) {
+          for (let part of msg.serverContent.modelTurn.parts) {
+            if (part.inlineData && part.inlineData.mimeType.startsWith('audio/pcm')) {
+              playBase64PCMAudio(part.inlineData.data);
+            }
+          }
+        }
+      } catch (err) {
+        console.error("Lỗi xử lý tin nhắn Gemini Live:", err);
+      }
+    };
+
+    geminiLiveSocket.onclose = () => {
+      stopGeminiLive();
+    };
+
+    geminiLiveSocket.onerror = (err) => {
+      console.error("Lỗi WebSocket:", err);
+      statusEl.textContent = "Lỗi kết nối tới Server Proxy Render!";
+      stopGeminiLive();
+    };
+
+  } catch (err) {
+    alert("Không thể khởi chạy Gemini Live: " + err.message);
+    stopGeminiLive();
+  }
+}
+
+async function startLiveMicRecording() {
+  try {
+    const stream = await ensureMicPermission();
+    liveAudioContext = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
+    const source = liveAudioContext.createMediaStreamSource(stream);
+    
+    // Tạo ScriptProcessor để lấy raw PCM data 16kHz 16-bit
+    liveScriptProcessor = liveAudioContext.createScriptProcessor(4096, 1, 1);
+    
+    liveScriptProcessor.onaudioprocess = (e) => {
+      if (!isGeminiLiveActive || !geminiLiveSocket || geminiLiveSocket.readyState !== WebSocket.OPEN) return;
+      
+      const inputBuffer = e.inputBuffer.getChannelData(0);
+      const pcm16 = floatTo16BitPCM(inputBuffer);
+      const base64Audio = arrayBufferToBase64(pcm16);
+
+      // Gửi gói tin Audio Realtime Chunk lên Gemini Live Proxy
+      const realTimeInput = {
+        realtimeInput: {
+          mediaChunks: [
+            {
+              mimeType: "audio/pcm",
+              data: base64Audio
+            }
+          ]
+        }
+      };
+      geminiLiveSocket.send(JSON.stringify(realTimeInput));
+    };
+
+    source.connect(liveScriptProcessor);
+    liveScriptProcessor.connect(liveAudioContext.destination);
+
+    document.getElementById('liveStatusText').textContent = "🔴 Gemini Live đang lắng nghe... Hãy nói tiếng Trung!";
+  } catch (err) {
+    console.error("Lỗi thu âm Micro Live:", err);
+  }
+}
+
+function stopGeminiLive() {
+  isGeminiLiveActive = false;
+  if (geminiLiveSocket) {
+    try { geminiLiveSocket.close(); } catch(e){}
+    geminiLiveSocket = null;
+  }
+  if (liveScriptProcessor) {
+    try { liveScriptProcessor.disconnect(); } catch(e){}
+    liveScriptProcessor = null;
+  }
+  if (liveAudioContext) {
+    try { liveAudioContext.close(); } catch(e){}
+    liveAudioContext = null;
+  }
+
+  const btn = document.getElementById('btnToggleGeminiLive');
+  const statusEl = document.getElementById('liveStatusText');
+  const pulse = document.getElementById('livePulse');
+
+  if (btn) {
+    btn.textContent = "🎙️ Bắt đầu đàm thoại Gemini Live";
+    btn.className = "btn btn-accent btn-block";
+  }
+  if (statusEl) statusEl.textContent = "Đã ngắt kết nối Gemini Live.";
+  if (pulse) pulse.classList.remove('active');
+}
+
+// Chuyển đổi Float32 (Microphone) -> PCM 16-bit Int
+function floatTo16BitPCM(output) {
+  let buffer = new ArrayBuffer(output.length * 2);
+  let view = new DataView(buffer);
+  for (let i = 0; i < output.length; i++) {
+    let s = Math.max(-1, Math.min(1, output[i]));
+    view.setInt16(i * 2, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+  }
+  return buffer;
+}
+
+function arrayBufferToBase64(buffer) {
+  let binary = '';
+  let bytes = new Uint8Array(buffer);
+  let len = bytes.byteLength;
+  for (let i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return window.btoa(binary);
+}
+
+// Phát âm thanh PCM Base64 trả về từ Gemini
+async function playBase64PCMAudio(base64Data) {
+  try {
+    const binaryString = window.atob(base64Data);
+    const len = binaryString.length;
+    const bytes = new Uint8Array(len);
+    for (let i = 0; i < len; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+
+    const int16Array = new Int16Array(bytes.buffer);
+    const float32Array = new Float32Array(int16Array.length);
+    for (let i = 0; i < int16Array.length; i++) {
+      float32Array[i] = int16Array[i] / 32768.0;
+    }
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
+    const buffer = audioCtx.createBuffer(1, float32Array.length, 24000);
+    buffer.getChannelData(0).set(float32Array);
+
+    const source = audioCtx.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioCtx.destination);
+    source.start(0);
+  } catch (err) {
+    console.error("Lỗi giải mã Audio PCM:", err);
+  }
+}
+
+// ===================== RENDER DAY LIST =====================
+function renderDayList() {
+  const list = document.getElementById('dayList');
+  list.innerHTML = '';
+  for (let i = 1; i <= 78; i++) {
+    const meta = DAY_META[i];
+    const row = document.createElement('div');
+    row.className = 'day-row';
+    if (state.doneDays.includes(i)) row.classList.add('done');
+    if (i === state.currentDay) row.classList.add('current');
+    row.onclick = () => openDay(i);
+    row.innerHTML = `
+      <div class="day-num">${i}</div>
+      <div class="day-info">
+        <div class="day-title">${meta.title}</div>
+        <div class="day-sub">${meta.stage} · ${meta.topic}</div>
+      </div>
+    `;
+    list.appendChild(row);
+  }
+}
+
+// ===================== OPEN DAY =====================
+function openDay(day) {
+  state.currentDay = day;
+  saveState();
+  const meta = DAY_META[day];
+  const data = getLesson(day);
+  const area = document.getElementById('lessonArea');
+  area.classList.remove('hidden');
+
+  let html = `
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
+        <h2>Ngày ${day}/365 – ${meta.title}</h2>
+        <span class="badge">${meta.stage} · ${meta.topic}</span>
+      </div>
+      <p style="color:var(--muted);margin:0.4rem 0"><strong>Mục tiêu:</strong> ${data.goals}</p>
+      
+      <!-- Khung Gemini Live Voice Realtime -->
+      <div class="live-voice-box">
+        <div class="live-voice-status">
+          <span class="live-pulse" id="livePulse"></span>
+          <span id="liveStatusText">Chưa bật Gemini Live</span>
+        </div>
+        <button id="btnToggleGeminiLive" class="btn btn-accent btn-block" onclick="toggleGeminiLive()">
+          🎙️ Bắt đầu đàm thoại Gemini Live (Giọng nói trực tiếp)
+        </button>
+      </div>
+
+      <div class="review-box">
+        <strong>📝 Kiểm tra bài cũ (đầu buổi)</strong>
+        <ul style="margin:0.4rem 0 0 1.2rem;font-size:0.95rem">
+          ${(data.review||[]).map(r => '<li>'+r+'</li>').join('')}
+        </ul>
+      </div>
+      
+      <h3>📚 Từ vựng mới</h3>
+      <div id="vocabList">
+  `;
+
+  data.vocab.forEach((v, idx) => {
+    html += `
+      <div class="vocab-item" data-idx="${idx}">
+        <div style="flex:1">
+          <div class="hanzi">${v.hanzi}</div>
+          <div class="pinyin">${v.pinyin}</div>
+          <div class="meaning">${v.meaning}</div>
+        </div>
+        <div class="vocab-actions">
+          <button class="audio-btn" title="Nghe phát âm chuẩn" onclick="speak('${v.hanzi}')">🔊</button>
+          <button class="mic-btn" title="Thu âm để gia sư đánh giá" onclick="toggleRecord(this, '${v.pinyin}')">🎙️</button>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+      
+      <div class="grammar-box">
+        <strong>📐 Ngữ pháp: ${data.grammar.title}</strong>
+        <p style="margin-top:0.4rem">${data.grammar.content}</p>
+      </div>
+
+      <button class="btn btn-success btn-block" onclick="markDone(${day})">✓ Đánh dấu hoàn thành Ngày ${day}</button>
+    </div>
+  `;
+
+  area.innerHTML = html;
+  area.scrollIntoView({behavior:'smooth'});
+  renderDayList();
+}
+
+function markDone(day) {
+  if (!state.doneDays.includes(day)) {
+    state.doneDays.push(day);
+    state.doneDays.sort((a,b)=>a-b);
+  }
+  saveState();
+  alert('Đã đánh dấu hoàn thành Ngày ' + day + '.');
+  renderDayList();
+}
+
+function renderTopics() {
+  const list = document.getElementById('topicList');
+  list.innerHTML = TOPICS.map(t => `
+    <div class="topic-item" onclick="openTopic('${t.id}')">
+      <h4>${t.name}</h4>
+      <p>${t.desc}</p>
+    </div>
+  `).join('');
+}
+
+function openTopic(id) {
+  const t = TOPICS.find(x => x.id === id);
+  if (!t) return;
+  const area = document.getElementById('topicLesson');
+  area.classList.remove('hidden');
+  let html = `<div class="card"><h2>${t.name}</h2></div>`;
+  area.innerHTML = html;
+}
+
+updateHomeProgress();
+showSection('home');
+</script>
+</body>
+</html>
