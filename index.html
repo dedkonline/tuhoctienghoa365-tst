@@ -24,7 +24,7 @@
 <script>
 const $=s=>document.querySelector(s);let DB=null,route='home',activeDay=1,activeWeek=1,chatHistory=[],recorder=null,recordChunks=[],recordTarget='',recordMode='chat',recordStarted=0,recordButtonId='',chatBusy=false;
 const GEMINI_LIVE_PROXY='wss://gemini-live-proxy-69dr.onrender.com';
-let liveWs=null,liveAudioCtx=null,liveMicStream=null,liveSource=null,liveProcessor=null,liveMuteGain=null,liveActive=false,liveOpening=false,liveNextPlayAt=0,liveSessionToken=0;
+let liveWs=null,liveAudioCtx=null,liveMicStream=null,liveSource=null,liveProcessor=null,liveMuteGain=null,liveActive=false,liveOpening=false,liveNextPlayAt=0,liveSessionToken=0,liveAudioSources=new Set();
 
 const KEY='zh365_progress_v2';let state=JSON.parse(localStorage.getItem(KEY)||'null')||{completed:[],scores:{},lastDay:1};
 const save=()=>{localStorage.setItem(KEY,JSON.stringify(state));$('#progressPill').textContent=state.completed.length+'/365 buổi'};
@@ -57,7 +57,7 @@ function chat(){if(!chatHistory.length)chatHistory=[{role:'model',parts:[{text:'
 function livePanelHTML(prompt){
   const safe=esc(prompt);
   return `<section class="live-panel"><h3>🎙️ Thực hành hội thoại trực tiếp với Gemini Live</h3>
-  <p>Đàm thoại giọng nói hai chiều theo thời gian thực. Bấm bắt đầu, cho phép microphone, rồi nói tiếng Hoa hoặc tiếng Việt. Không cần nhập API key trong app.</p>
+  <p>Đàm thoại giọng nói hai chiều theo thời gian thực. Bấm bắt đầu, cho phép microphone, rồi nói tiếng Hoa hoặc tiếng Việt. Chế độ Live không cần Gemini API key. Để không bị hỏi lại, hãy chọn “Cho phép trên trang web này” trong Chrome.</p>
   <div class="live-state"><span class="live-indicator" id="liveIndicator"></span><span id="liveState">Chưa kết nối · Gemini Live qua máy chủ trung gian</span></div>
   <div class="row"><button class="btn" id="liveToggle" onclick="toggleGeminiLive(decodeURIComponent('${encodeURIComponent(safe)}'))">🎙️ Bắt đầu Gemini Live</button><span class="small muted">Cần Internet và quyền microphone</span></div></section>`;
 }
@@ -117,12 +117,15 @@ function resampleAudio(input,fromRate,toRate){
 }
 function queueLivePCM(base64,sampleRate=24000){
   try{
-    if(!liveAudioCtx||liveAudioCtx.state==='closed')return;
+    if(!liveActive||!liveAudioCtx||liveAudioCtx.state==='closed')return;
     const raw=atob(base64),view=new DataView(new ArrayBuffer(raw.length)),samples=new Float32Array(Math.floor(raw.length/2));
     for(let i=0;i<raw.length;i++)view.setUint8(i,raw.charCodeAt(i));
     for(let i=0;i<samples.length;i++)samples[i]=view.getInt16(i*2,true)/32768;
     const buffer=liveAudioCtx.createBuffer(1,samples.length,sampleRate);buffer.copyToChannel(samples,0);
     const src=liveAudioCtx.createBufferSource();src.buffer=buffer;src.connect(liveAudioCtx.destination);
+    liveAudioSources.add(src);
+    src.onended=()=>{liveAudioSources.delete(src);try{src.disconnect()}catch(e){}};
+    // Xếp từng đoạn nối tiếp nhau trên cùng một AudioContext để tránh phát chồng tiếng.
     const now=liveAudioCtx.currentTime;if(liveNextPlayAt<now)liveNextPlayAt=now+0.03;
     src.start(liveNextPlayAt);liveNextPlayAt+=buffer.duration;
   }catch(err){console.warn('Không phát được audio Gemini Live',err)}
@@ -140,6 +143,9 @@ function stopGeminiLive(message='Đã ngắt kết nối.'){
   if(liveSource){try{liveSource.disconnect()}catch(e){}liveSource=null}
   if(liveMuteGain){try{liveMuteGain.disconnect()}catch(e){}liveMuteGain=null}
   if(liveMicStream){liveMicStream.getTracks().forEach(t=>{try{t.stop()}catch(e){}});liveMicStream=null}
+  // Dừng và giải phóng mọi đoạn audio đang chờ/phát trước khi đóng AudioContext.
+  for(const src of liveAudioSources){try{src.onended=null;src.stop()}catch(e){}try{src.disconnect()}catch(e){}}
+  liveAudioSources.clear();
   if(liveAudioCtx){const c=liveAudioCtx;liveAudioCtx=null;try{c.close()}catch(e){}}
   liveNextPlayAt=0;setLiveStatus(message);
 }
@@ -167,4 +173,3 @@ function saveKey(){let k=$('#gemKey').value.trim();if(!k){alert('Anh chưa nhậ
 async function testKey(){let k=$('#gemKey').value.trim();if(!k){alert('Nhập API key trước nghen.');return}try{let r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':k},body:JSON.stringify({contents:[{parts:[{text:'Reply only: Kết nối thành công.'}]}]})});let j=await r.json();if(!r.ok)throw new Error(j.error?.message||'Lỗi API');sessionStorage.setItem('zh365_gemini_key',k);alert('Kết nối thành công với Gemini.');}catch(e){alert('Chưa kết nối được: '+e.message)}}
 init();
 </script></body></html>
- 
