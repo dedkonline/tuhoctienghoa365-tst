@@ -1,0 +1,9 @@
+{
+  "name": "gemini-live-proxy",
+  "version": "2.0.0",
+  "description": "Máy chủ trung gian giữ Gemini API key cho app Tự học tiếng Hoa 52 tuần",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "ws": "^8.18.0" }
+}
